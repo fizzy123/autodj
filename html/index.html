@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <script src="static/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <style>
+body{
+  background-color: black;
+  color: white;
+}
+div{
+  display: inline-block;
+}
+.no-inline-block{
+  display: block;
+}
+.button {
+  border: 1px #666666 solid;
+}
+    </style>
+  </head>
+  <body>
+    <div id="header" class="no-inline-block" style="border-bottom: 1px solid #AAAAAA">
+      <div id="show-start" class="button">START</div>
+      <div id="show-play" class="button">PLAY</div>
+      <div id="show-work" class="button">WORK</div>
+    </div>
+    <div id="contents">
+      <div id="start">
+        <div id="starting-song-container" class="no-inline-block">
+        </div>
+        <br>
+        <div class="no-inline-block">
+        <input id="is-testing" type="checkbox"><div>isTesting</div>
+        </div>
+        <input id="initialize" type="button" value="Initialize">
+        <div id="init-loading" style="display: none" class="no-inline-block">Initializing...</div>
+      </div>
+      <div id="play" style="display: none">
+        <div style="vertical-align: top; padding: 0px 20px;">
+          <h1>Current Loops</h1>
+          <div id='current-loops'></div>
+        </div>
+        <div style="vertical-align: top; border-left: 1px #666666 solid; height: 100%; padding: 0px 20px;">
+          <h1>Current Song</h1>
+          <h3 id='current-song-name'></h3>
+        </div>
+        <div style="border-left: 1px #666666 solid; height: 100%; padding: 0px 20px; overflow-wrap: anywhere; width: 500px;">
+          <h1>Last Song</h1>
+          <h3 id='last-song-name'></h3>
+          <div class="no-inline-block">
+            <h4>Dont</h4>
+            <input type="text" class='song-dont' disabled style="width:100%">
+          </div>
+          <div class="no-inline-block">
+            <h4>preferred</h4>
+            <input type="text" class='song-preferred' disabled style="width:100%">
+          </div>
+          <div class="no-inline-block">
+            <h4>tags</h4>
+            <div id='last-song-tags'>
+              <div class="no-inline-block">
+                <input type="checkbox" id="starting-song"><div>starting song</div>
+              </div>
+              <div class="no-inline-block">
+                <input type="checkbox" id="expand"><div>expand</div>
+              </div>
+              <div class="no-inline-block">
+                <input type="checkbox" id="fix"><div>fix</div>
+              </div>
+              <div class="no-inline-block">
+                <input type="checkbox" id="delete"><div>delete</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="work" style="display: none">
+        <div id="transitions" style="width:49%; overflow-wrap: anywhere; vertical-align: top;">
+          <div id="expand-container" class="no-inline-block">
+            <h3 class="no-inline-block">Expand Songs</h3>
+            <div id="expand-songs">
+            </div>
+          </div>
+          <div id="fix-container" class="no-inline-block">
+            <h3 class="no-inline-block">Fix Songs</h3>
+            <div id="fix-songs">
+            </div>
+          </div>
+          <input id="transition-setup" type="button" value="setup">
+        </div>
+        <div id="update" style="width:50%; overflow-wrap: anywhere; vertical-align: top;">
+          <h1 style="margin-bottom: 0px">Update Details</h1>
+          <div id="song-details">
+            <h3>Last Song</h3>
+            <div id="song-name" class="no-inline-block"></div>
+            <div class="field-container no-inline-block">
+              <div>Key</div>
+              <input type="number" id="song-key" class="transition-field" data-type="key" data-position="last">
+            </div>
+            <div class="field-container no-inline-block">
+              <div>BPM</div>
+              <input type="number" id="song-bpm" class="transition-field" data-type="bpm" data-position="last">
+            </div>
+            <div class="field-container no-inline-block">
+              <div>end time</div>
+              <input type="number" id="song-end-time" class="transition-field" data-type="end" data-position="last">
+            </div>
+            <div class="no-inline-block">
+              <h4>Dont</h4>
+              <input type="text" class='song-dont' style="width:100%">
+            </div>
+            <div class="no-inline-block">
+              <h4>preferred</h4>
+              <input type="text" class='song-preferred' style="width:100%">
+            </div>
+          </div>
+          <div id="next-song-details">
+            <h3>Current Song</h3>
+            <div id="next-song-name" class="no-inline-block"></div>
+            <div class="field-container no-inline-block">
+              <div>Key</div>
+              <input type="number" id="next-song-key" class="transition-field" data-type="key" data-position="current">
+            </div>
+            <div class="field-container no-inline-block">
+              <div>BPM</div>
+              <input type="number" id="next-song-bpm" class="transition-field" data-type="bpm" data-position="current">
+            </div>
+            <div class="field-container no-inline-block">
+              <div>start time</div>
+              <input type="number" id="next-song-start-time" class="transition-field" data-type="start" data-position="current">
+            </div>
+          </div>
+          <input id="clear-transition" class="no-inline-block" type="button" value="Clear Transition">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
