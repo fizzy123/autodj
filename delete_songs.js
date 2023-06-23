@@ -1,9 +1,10 @@
 const util = require("./util");
-const db = require('better-sqlite3')('/Users/seonyoo/Dropbox/User Library/Presets/Instruments/Max Instrument/songs.db');
+const db = require('better-sqlite3')('D:/Dropbox/User Library/Presets/Instruments/Max Instrument/songs.db');
 const { Ableton } = require("ableton-js");
-const ableton = new Ableton();
+const ableton = new Ableton({ logger: console });
 
 (async () => {
+  await ableton.start();
   let getStartingSongQuery = "SELECT song FROM songs WHERE tags LIKE '%delete%';"
   let results = await db.prepare(getStartingSongQuery).all()
 
@@ -55,14 +56,14 @@ const ableton = new Ableton();
       clipSlots[i].duplicateClipTo(clipSlots[firstOpenClipSlot])
       firstOpenClipSlot = firstOpenClipSlot + 1
     }
-    let lastSlot = clipCount - deletedClipCount
-    if (i >= lastSlot) {
-      if (hasClip) {
-        await clipSlots[i].deleteClip()
-      } else {
-        break
-      }
-    }
+//    let lastSlot = clipCount - deletedClipCount
+//    if (i >= lastSlot) {
+//      if (hasClip) {
+//        await clipSlots[i].deleteClip()
+//      } else {
+//        break
+//      }
+//    }
     console.log("moving clips", i)
   }
   process.exit();

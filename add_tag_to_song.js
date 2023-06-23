@@ -1,4 +1,4 @@
-const db = require('better-sqlite3')('/Users/seonyoo/Dropbox/User Library/Presets/Instruments/Max Instrument/songs.db');
+const db = require('better-sqlite3')('D:/Dropbox/User Library/Presets/Instruments/Max Instrument/songs.db');
 (async () => {
   const songName = process.argv[2]
   let getSongQuery = `SELECT tags FROM songs where song = '${songName}' AND section = 'end';`
@@ -7,7 +7,7 @@ const db = require('better-sqlite3')('/Users/seonyoo/Dropbox/User Library/Preset
   let tags = results[0].tags || ''
   if (tags.includes("starting-song")) {
     console.log("song already marked as starting song")
-    return
+//    return
   }
   let tagList = tags.split(",")
   tagList.push(process.argv[3])

@@ -1,7 +1,7 @@
 const open = require('open');
 const { Ableton } = require("ableton-js");
-const { get } = require("./util");
-const db = require('better-sqlite3')('/Users/seonyoo/Dropbox/User Library/Presets/Instruments/Max Instrument/songs.db');
+const { get, randomCombination } = require("./util");
+const db = require('better-sqlite3')('D:/Dropbox/User Library/Presets/Instruments/Max Instrument/songs.db');
 const express = require('express')
 const app = express()
 app.use(express.json())
@@ -178,7 +178,7 @@ app.post('/song', async (req, res) => {
 })
 
 app.get('/starting-songs', async (req, res) => {
-  let getStartingSongQuery = "SELECT song FROM songs WHERE tags LIKE '%starting-song%';"
+  let getStartingSongQuery = "SELECT song, key, bpm FROM songs WHERE tags LIKE '%starting-song%';"
   let results = await db.prepare(getStartingSongQuery).all()
   return res.json({ songs: results })
 })
@@ -232,6 +232,8 @@ app.post("/setup-transition", async (req, res) => {
   let nextSong;
   if (transition === "expand") {
     currentKey = song.key
+    await setNotedMidiKey()
+
     results = await db.prepare(buildNextSongQuery(song, true)).all()
     nextSong = findPreferredSong(song, results)
   } else if (transition.includes("fix")) {
@@ -270,7 +272,7 @@ app.post("/setup-transition", async (req, res) => {
   })
 })
 
-const ableton = new Ableton();
+const ableton = new Ableton({ logger: console });
 
 var songHistory
 var SONG_INDEX
@@ -299,6 +301,8 @@ var chosen
 var isTesting
 
 const init = async () => {
+  await ableton.start();
+
   liveAPICache = {}
   songHistory = []
 
@@ -368,6 +372,42 @@ const init = async () => {
     }
   }
 
+  midiLoops = {}
+  const midiLoopSlots = await trackDict["loops.midi"].get("clip_slots")
+  for (const midiLoopSlot of midiLoopSlots) {
+    const midiLoop = await midiLoopSlot.get("clip");
+    if (!midiLoop) {
+      break
+    }
+
+    // ensure various qualities of clip
+    await midiLoop.set("looping", 1)
+
+    midiLoopName = await midiLoop.get("name")
+    midiLoops[midiLoopName] = {
+      "clip": midiLoop,
+      "clipSlot": midiLoopSlot,
+    }
+  }
+
+  percMidiLoops = {}
+  const percMidiLoopSlots = await trackDict["loops.perc.midi"].get("clip_slots")
+  for (const percMidiLoopSlot of percMidiLoopSlots) {
+    const percMidiLoop = await percMidiLoopSlot.get("clip");
+    if (!percMidiLoop) {
+      break
+    }
+
+    // ensure various qualities of clip
+    await percMidiLoop.set("looping", 1)
+
+    percMidiLoopName = await percMidiLoop.get("name")
+    percMidiLoops[percMidiLoopName] = {
+      "clip": percMidiLoop,
+      "clipSlot": percMidiLoopSlot,
+    }
+  }
+
   colorDict = [
     "ff2f3a",
     "fd691d",
@@ -383,7 +423,7 @@ const init = async () => {
     "ff39d1",
   ]
 
-  await colorClips()
+  //await colorClips()
   //await colorLoops()
   //startingTrack = "intro.jaykode"
   //  startingTrack = "love_is_alive.chet_porter"
@@ -415,8 +455,11 @@ const init = async () => {
   const parametersA = await deviceA.get('parameters')
   for (const parameterA of parametersA) {
     const parameterName = await parameterA.get('name')
-    if (parameterName === "Intensity") {
+  console.log(2)
+    console.log(parameterName)
+    if (parameterName === "Intensit") {
       state['A'].reverb = parameterA
+      console.log("reverb set")
     }
   }
 
@@ -425,7 +468,7 @@ const init = async () => {
   const parametersB = await deviceB.get('parameters')
   for (const parameterB of parametersB) {
     const parameterName = await parameterB.get('name')
-    if (parameterName === "Intensity") {
+    if (parameterName === "Intensit") {
       state['B'].reverb = parameterB
     }
   }
@@ -710,7 +753,7 @@ const loadLoops = async () => {
     if (pitchCorrection > 6) {
       pitchCorrection = pitchCorrection - 12
     }
-    if (pitchCorrection < -6) {
+    if (pitchCorrection <= -6) {
       pitchCorrection = pitchCorrection + 12
     }
     await loopClip.set("pitch_coarse", pitchCorrection)
@@ -744,6 +787,24 @@ const loadLoops = async () => {
     //   var loopClip = await getClip(destination, 1)
     //    loopClip.set("ram_mode", 1)
     currentLoops.push(loop)
+  }
+
+  midiLoopCount = 4
+  midiLoopSelection = randomCombination(Object.keys(midiLoops), midiLoopCount)
+  for (var i = 0; i < midiLoopCount; i++) {
+    name = midiLoopSelection[i]
+    var destination = "loop.midi." + (i + 1).toString()
+    const targetClipSlot = await getClipSlot(destination, 0)
+    await midiLoops[name].clipSlot.duplicateClipTo(targetClipSlot)
+  }
+
+  percMidiLoopCount = 2
+  percMidiLoopSelection = randomCombination(Object.keys(percMidiLoops), percMidiLoopCount)
+  for (var i = 0; i < percMidiLoopCount; i++) {
+    name = percMidiLoopSelection[i]
+    var destination = "perc.midi." + (i + 1).toString()
+    const targetClipSlot = await getClipSlot(destination, 0)
+    await percMidiLoops[name].clipSlot.duplicateClipTo(targetClipSlot)
   }
 
   console.log("load loop duration: ", (new Date()).getTime() - loopStart)
@@ -791,6 +852,7 @@ const pickNextSong = async () => {
 
   if (changedKey) {
     currentKey = nextSong.key
+    await setNotedMidiKey()
   } else {
     await setCorrectKey(nextSong) // if key hasn't changed, make sure that new song is in same key
     setTransition(nextSong) // also set reverbOut or not
@@ -1014,13 +1076,13 @@ const initialize = async () => {
 
   const currentSong = await getCurrentSong()
   currentKey = currentSong.key
+  await setNotedMidiKey()
 
   await loadLoops()
 
   await setBarStart()
 
   ableton.song.stopPlaying()
-
 
   // setup next song
   await pickNextSong()
@@ -1050,6 +1112,18 @@ function is_playing(status) {
     startTime = new Date()
     playing = 1
   }
+}
+
+async function setNotedMidiKey() {
+    const devices = await trackDict["noted_midi"].get("devices")
+    const pitch_shift = devices[0]
+    const parameters = await pitch_shift.get('parameters')
+    for (const parameter of parameters) {
+      const parameterName = await parameter.get('name')
+      if (parameterName === "Pitch") {
+          parameter.set('value', -(6 - currentKey))
+      }
+    }
 }
 
 init().then(function() {

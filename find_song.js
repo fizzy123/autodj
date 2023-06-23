@@ -1,9 +1,10 @@
 const util = require("./util");
-const db = require('better-sqlite3')('/Users/seonyoo/Dropbox/User Library/Presets/Instruments/Max Instrument/songs.db');
+const db = require('better-sqlite3')('D:/Dropbox/User Library/Presets/Instruments/Max Instrument/songs.db');
 const { Ableton } = require("ableton-js");
-const ableton = new Ableton();
+const ableton = new Ableton({ logger: console});
 
 (async () => {
+  await ableton.start()
   tracks = await ableton.song.get("tracks");
   let clipsTrack;
   for (const track of tracks) {

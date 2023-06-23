@@ -284,7 +284,7 @@ const loadStartingSongs = () => {
       input.prop("value", song.song)
 
       let label = $("<div>")
-      label.text(song.song)
+      label.text(`${song.song}|${song.key}|${song.bpm}`)
 
       let songWrapper = $("<div>")
       songWrapper.append(input)
