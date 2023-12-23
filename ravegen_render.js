@@ -160,7 +160,7 @@ let clipMapping = {
   "chippy.9": majMelodies,
   "chippy.10": majMelodies,
   "chippy.12": majMelodies,
-  "distored.2": majMelodies,
+  "distorted.2": majMelodies,
   "divinity.2": majMelodies,
   "dr_mario": majMelodies,
   "eudaimonia_overture": majMelodies,
@@ -168,7 +168,7 @@ let clipMapping = {
   "finish_line": majMelodies,
   "flute.3": majMelodies,
   "flute.7": majMelodies,
-  "flute.9": majMelodies,
+  "flute.8": majMelodies,
   "gay_pirates": majMelodies,
   "get_olde_second_wind": majMelodies,
   "ghost": majMelodies,
@@ -227,7 +227,7 @@ let clipMapping = {
   "world_in_harmony": majMelodies,
   "midsummer madness.1": majMelodies,
   "ringtone remix.1": majMelodies,
-  "ringtone remix.2": majMelodies,
+  "ringtone remix.3": majMelodies,
   "thank u next.2": majMelodies,
   "alien superstar.2": majMelodies,
   "alien superstar.3": majMelodies,
@@ -284,7 +284,7 @@ let clipTonic = {
   "chippy.9": "maj",
   "chippy.10": "maj",
   "chippy.12": "maj",
-  "distored.2": "maj",
+  "distorted.2": "maj",
   "divinity.2": "maj",
   "dr_mario": "maj",
   "eudaimonia_overture": "maj",
@@ -292,7 +292,7 @@ let clipTonic = {
   "finish_line": "maj",
   "flute.3": "maj",
   "flute.7": "maj",
-  "flute.9": "maj",
+  "flute.8": "maj",
   "gay_pirates": "maj",
   "get_olde_second_wind": "maj",
   "ghost": "maj",
@@ -351,7 +351,7 @@ let clipTonic = {
   "world_in_harmony": "maj",
   "midsummer madness.1": "maj",
   "ringtone remix.1": "maj",
-  "ringtone remix.2": "maj",
+  "ringtone remix.3": "maj",
   "thank u next.2": "maj",
   "alien superstar.2": "maj",
   "alien superstar.3": "maj",
@@ -511,15 +511,6 @@ const init = async () => {
       minParam: minParam,
     }
   }
-
-  if (songListenerRemover) {
-    await songListenerRemover()
-  }
-  songListenerRemover = await ableton.song.addListener("current_song_time", (async (time) => {
-    await beat(time)
-  }));
-
-  await toggleLoop()
 }
 
 let processingBeat = false
@@ -569,14 +560,7 @@ const beat = async(beats) => {
   processingBeat = false
 }
 
-let CURRENT_LOOP
-const toggleLoop = async () => {
-  if (Object.keys(clipMapping).filter(loop => !HISTORY.includes(loop)).length === 0) {
-    HISTORY = []
-  }
-  CURRENT_LOOP = randomChoice(Object.keys(clipMapping).filter(loop => !HISTORY.includes(loop)))
-  console.log(CURRENT_LOOP)
-  HISTORY.push(CURRENT_LOOP)
+const renderLoop = async () => {
   await trackDict["loops"].clips[CURRENT_LOOP].clip.fire()
   if (clipTonic[CURRENT_LOOP] === "maj") {
     await trackDict["kick"].majParam.set("value", 127)
@@ -587,6 +571,17 @@ const toggleLoop = async () => {
   }
 }
 
+const getNewLoop = () => {
+  if (Object.keys(clipMapping).filter(loop => !HISTORY.includes(loop)).length === 0) {
+    HISTORY = []
+  }
+  let loop = randomChoice(Object.keys(clipMapping)
+//    .filter(loop => !HISTORY.includes(loop)) disabling history uniqueness for now
+  )
+  HISTORY.push(loop)
+  return loop
+}
+
 const toggleComplement = async() => {
   if (!CURRENT_LOOP) {
     return
@@ -595,9 +590,22 @@ const toggleComplement = async() => {
     HISTORY = []
   }
   let nextComplement = randomChoice(clipMapping[CURRENT_LOOP].filter(loop => !HISTORY.includes(loop)))
-  console.log(nextComplement)
   HISTORY.push(CURRENT_LOOP)
   await trackDict["complements"].clips[nextComplement].clip.fire()
+}
+
+const getNewComplement = (currentLoop) => {
+  if (!currentLoop) {
+    return
+  }
+  if (clipMapping[currentLoop].filter(loop => !HISTORY.includes(loop))) {
+    HISTORY = []
+  }
+  let nextComplement = randomChoice(clipMapping[currentLoop]
+//    .filter(loop => !HISTORY.includes(loop))
+  )
+  HISTORY.push(nextComplement)
+  return nextComplement
 }
 
 
@@ -614,6 +622,13 @@ const toggleHH = async (bpm, toggle) => {
   }
 }
 
+const getNewHH = (bpm) => {
+    let filteredClips = hhInfo.filter((hhClip) => {
+      return hhClip.bpm[0] < bpm && hhClip.bpm[1] > bpm
+    })
+    return randomChoice(filteredClips).name
+}
+
 const toggleKick = async (bpm, toggle) => {
   if (toggle) {
     let nextClip = randomChoice(kickInfo.filter((kickClip) => {
@@ -627,12 +642,24 @@ const toggleKick = async (bpm, toggle) => {
   }
 }
 
+const getNewKick = (bpm) => {
+    return randomChoice(kickInfo.filter((kickClip) => {
+      return kickClip.bpm[0] < bpm && kickClip.bpm[1] > bpm
+    })).name
+}
+
 const toggleSnare = async (bpm) => {
   let nextClip = randomChoice(snareInfo.filter((snareClip) => {
     return snareClip.bpm[0] < bpm && snareClip.bpm[1] > bpm
   }))
   await trackDict["snare"].clips[nextClip.name].clip.fire()
   await trackDict["snare"].chainParam.set("value", Math.floor(128 * Math.random()))
+}
+
+const getNewSnare = (bpm) => {
+  return randomChoice(snareInfo.filter((snareClip) => {
+    return snareClip.bpm[0] < bpm && snareClip.bpm[1] > bpm
+  })).name
 }
 
 const togglePerc = async (bpm) => {
@@ -666,6 +693,86 @@ const toggleLead = async (bpm) => {
   await nextClip.clip.fire()
 }
 
-init().then(function() {
-  console.log("initalized!")
+const measureCount = 1024
+const render = async () => {
+  let bpm = await ableton.song.get("tempo")
+  let setLength = 4 * measureCount
+  let currentTime = 0
+  let currentLoop, currentLoopLength
+
+  let currentComplement, currentComplementLength
+
+  let currentHH, currentHHLength
+
+  let currentKick, currentKickLength
+
+  let currentSnare, currentSnareLength
+
+  let currentPerc, currentPercLength
+
+  while (currentTime < setLength) {
+    // loops change every 16 measures
+    if (((currentTime) % (16 * 4)) === 0) {
+      let tmpLoop = getNewLoop()
+      currentLoop = trackDict["loops"].clips[tmpLoop].clip
+      currentLoopLength = await currentLoop.get("length")
+    }
+    if (currentTime % currentLoopLength === 0) {
+      await trackDict["loops"].track.duplicateClipToArrangement(currentLoop.raw.id, currentTime)
+    }
+    
+    // complements change every 8 measures
+    if (((currentTime) % (8 * 4)) === 0) {
+      let tmpComplement = getNewComplement(getNewComplement(currentLoop.raw.name))
+      currentComplement = trackDict["complements"].clips[tmpComplement].clip
+      currentComplementLength = await currentComplement.get("length")
+    }
+    if (currentTime % currentComplementLength === 0) {
+      await trackDict["complements"].track.duplicateClipToArrangement(currentComplement.raw.id, currentTime)
+    }
+
+    // hihats change every 8 measures and toggle on and off every 4 measures
+    if (((currentTime) % (8 * 4)) === 0) {
+      currentHH = trackDict["hh"].clips[getNewHH(bpm)].clip
+      currentHHLength = await currentHH.get("length")
+    }
+    if (currentTime % currentHHLength === 0 && currentTime % (8 * 4) >= (4 * 4)) {
+      await trackDict["hh"].track.duplicateClipToArrangement(currentHH.raw.id, currentTime)
+    }
+
+    // kicks change every 16 measures and toggle on and off every 8 measures
+    if (((currentTime) % (16 * 4)) === 0) {
+      currentKick = trackDict["kick"].clips[getNewKick(bpm)].clip
+      currentKickLength = await currentKick.get("length")
+    }
+    if (currentTime % currentKickLength === 0 && currentTime % (16 * 4) >= (8 * 4)) {
+      await trackDict["kick"].track.duplicateClipToArrangement(currentKick.raw.id, currentTime)
+    }
+
+    // snares change every 8 measures
+    if (((currentTime) % (8 * 4)) === 0) {
+      let tmpSnare = getNewSnare(bpm)
+      currentSnare = trackDict["snare"].clips[tmpSnare].clip
+      currentSnareLength = await currentSnare.get("length")
+    }
+    if (currentTime % currentSnareLength === 0) {
+      await trackDict["snare"].track.duplicateClipToArrangement(currentSnare.raw.id, currentTime)
+    }
+
+    // perc changes every 8 measures
+    if (((currentTime) % (8 * 4)) === 0) {
+      currentPerc = trackDict["perc"].clips[getNewSnare(bpm)].clip
+      currentPercLength = await currentPerc.get("length")
+    }
+    if (currentTime % currentPercLength === 0) {
+      await trackDict["perc"].track.duplicateClipToArrangement(currentPerc.raw.id, currentTime)
+    }
+
+    currentTime = currentTime + 4
+  }
+}
+
+init().then(render).then(function() {
+  console.log("rendered!")
+  process.exit()
 })

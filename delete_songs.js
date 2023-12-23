@@ -1,5 +1,5 @@
 const util = require("./util");
-const db = require('better-sqlite3')('D:/Dropbox/User Library/Presets/Instruments/Max Instrument/songs.db');
+const db = require('better-sqlite3')('C:/Users/fizzz/Dropbox/User Library/Presets/Instruments/Max Instrument/songs.db');
 const { Ableton } = require("ableton-js");
 const ableton = new Ableton({ logger: console });
 

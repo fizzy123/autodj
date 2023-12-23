@@ -34,6 +34,11 @@ div{
         </div>
         <input id="initialize" type="button" value="Initialize">
         <div id="init-loading" style="display: none" class="no-inline-block">Initializing...</div>
+        <div class="no-inline-block">
+        <div>Render song count:</div><input id="render-song-count" type="text">
+        </div>
+        <input id="render" type="button" value="Render">
+        <div id="render-loading" style="display: none" class="no-inline-block">Rendering...</div>
       </div>
       <div id="play" style="display: none">
         <div style="vertical-align: top; padding: 0px 20px;">
@@ -86,6 +91,7 @@ div{
             <div id="fix-songs">
             </div>
           </div>
+	  <input id="reverse-setup" type="checkbox" name="reverse-setup"> <label for="reverse-setup">reverse</label>
           <input id="transition-setup" type="button" value="setup">
         </div>
         <div id="update" style="width:50%; overflow-wrap: anywhere; vertical-align: top;">

@@ -1,7 +1,7 @@
 const open = require('open');
 const { Ableton } = require("ableton-js");
 const { get, randomCombination } = require("./util");
-const db = require('better-sqlite3')('D:/Dropbox/User Library/Presets/Instruments/Max Instrument/songs.db');
+const db = require('better-sqlite3')('C:/Users/fizzz/Dropbox/User Library/Presets/Instruments/Max Instrument/songs.db');
 const express = require('express')
 const app = express()
 app.use(express.json())
@@ -186,9 +186,7 @@ app.get('/starting-songs', async (req, res) => {
 let songListenerRemover = null;
 app.post('/initialize', async (req, res) => {
   startingTrack = req.body.startingSong
-  if (req.body.isTesting) {
-    isTesting = true
-  }
+  isTesting = !!req.body.isTesting
   initialize().then(async () => {
     if (songListenerRemover) {
       await songListenerRemover()
@@ -198,6 +196,17 @@ app.post('/initialize', async (req, res) => {
     }));
 
     sendMsg(JSON.stringify({ message: "init-complete" }))
+  })
+  return res.json({success: true})
+})
+
+app.post('/render', async (req, res) => {
+  startingSongName = req.body.startingSong
+  isTesting = !!req.body.isTesting 
+  renderSongCount = req.body.renderSongCount
+  
+  render(startingSongName, isTesting, renderSongCount).then(async () => {
+    sendMsg(JSON.stringify({ message: "render-complete" }))
   })
   return res.json({success: true})
 })
@@ -226,9 +235,10 @@ app.post("/setup-transition", async (req, res) => {
   state[currentChannel].end = 0
   state[currentChannel].currentPosition = 0
   let songName = req.body.name
-  trackDict["testing1"].duplicateClipToArrangement(clips[songName].clip.raw.id, 0)
+  console.log(songName)
   let transition = req.body.transition
   let song = await getSong(songName)
+  songHistory = [songName]
   let nextSong;
   if (transition === "expand") {
     currentKey = song.key
@@ -248,6 +258,11 @@ app.post("/setup-transition", async (req, res) => {
     let fixResults = await db.prepare(fixSongQuery).all()
     nextSong = fixResults[0]
   }
+  if (req.body.reverse) {
+    var tmpSong = song
+    song = await getSong(nextSong.song)
+    nextSong = await getSong(tmpSong.song, "start")
+  }
 
   if (nextSong === undefined) {
     newTags = song.tags.filter((tag) => tag != transition)
@@ -260,9 +275,12 @@ app.post("/setup-transition", async (req, res) => {
   if (song.key === 11 && nextSong.key === 0) {
     diff = -1
   } else if (song.key === 0 && nextSong.key === 11) {
+
     diff = 1
   }
-
+nit
+  await ableton.song.set("tempo", song.bpm);
+  trackDict["testing1"].duplicateClipToArrangement(clips[song.song].clip.raw.id, 0)
   await clips[nextSong.song].clip.set("pitch_coarse", diff)
   trackDict["testing2"].duplicateClipToArrangement(clips[nextSong.song].clip.raw.id, song.time - nextSong.time)
   await clips[nextSong.song].clip.set("pitch_coarse", 0)
@@ -312,7 +330,7 @@ const init = async () => {
 
   tracks = await ableton.song.get("tracks");
   for (const track of tracks) {
-    trackDict[await track.get("name")] = track
+    trackDict[track.raw.name] = track
   }
 
   clips = {}
@@ -324,10 +342,10 @@ const init = async () => {
     }
 
     // ensure various qualities of clip
-    await clip.set("pitch_coarse", 0)
-    await clip.set("warp_mode", 4)
+    // await clip.set("pitch_coarse", 0)
+    // await clip.set("warp_mode", 4)
 
-    clipName = await clip.get("name")
+    clipName = clip.raw.name
     clips[clipName] = {
       "clip": clip,
       "clipSlot": clipSlot,
@@ -347,7 +365,7 @@ const init = async () => {
     await loop.set("pitch_coarse", 0)
     await loop.set("warp_mode", 4)
 
-    loopName = await loop.get("name")
+    loopName = loop.raw.name
     loops[loopName] = {
       "clip": loop,
       "clipSlot": loopSlot,
@@ -365,7 +383,7 @@ const init = async () => {
     // ensure various qualities of clip
     await percLoop.set("looping", 1)
 
-    percLoopName = await percLoop.get("name")
+    percLoopName = percLoop.raw.name
     percLoops[percLoopName] = {
       "clip": percLoop,
       "clipSlot": percLoopSlot,
@@ -383,7 +401,7 @@ const init = async () => {
     // ensure various qualities of clip
     await midiLoop.set("looping", 1)
 
-    midiLoopName = await midiLoop.get("name")
+    midiLoopName = midiLoop.raw.name
     midiLoops[midiLoopName] = {
       "clip": midiLoop,
       "clipSlot": midiLoopSlot,
@@ -401,7 +419,7 @@ const init = async () => {
     // ensure various qualities of clip
     await percMidiLoop.set("looping", 1)
 
-    percMidiLoopName = await percMidiLoop.get("name")
+    percMidiLoopName = percMidiLoop.raw.name
     percMidiLoops[percMidiLoopName] = {
       "clip": percMidiLoop,
       "clipSlot": percMidiLoopSlot,
@@ -454,9 +472,7 @@ const init = async () => {
   const deviceA = devicesA[1]
   const parametersA = await deviceA.get('parameters')
   for (const parameterA of parametersA) {
-    const parameterName = await parameterA.get('name')
-  console.log(2)
-    console.log(parameterName)
+    const parameterName = parameterA.raw.name
     if (parameterName === "Intensit") {
       state['A'].reverb = parameterA
       console.log("reverb set")
@@ -467,7 +483,7 @@ const init = async () => {
   const deviceB = devicesB[1]
   const parametersB = await deviceB.get('parameters')
   for (const parameterB of parametersB) {
-    const parameterName = await parameterB.get('name')
+    const parameterName = parameterB.raw.name
     if (parameterName === "Intensit") {
       state['B'].reverb = parameterB
     }
@@ -492,7 +508,7 @@ const colorClips = async () => {
   results = await db.prepare("select song, key from songs group by song;").all()
   for (const result of results) {
     if (result.song in clips) {
-      color = await clips[result.song].clip.get("color")
+      color = clips[result.song].clip.raw.color
       await clips[result.song].clip.set("color", parseInt(colorDict[parseInt(result.key)], 16))
     }
   }
@@ -505,7 +521,6 @@ const colorLoops = async () => {
       await loops[result.name].clip.set("color", parseInt(colorDict[parseInt(result.key)], 16))
     }
   }
-  console.log("test5")
 }
 
 
@@ -518,17 +533,12 @@ function getOtherChannel() {
 }
 
 const getClip = async (track, clipSlotIndex) => {
-  let clipSlots
-  try {
-    clipSlots = await trackDict[track].get('clip_slots')
-  } catch (e) {
-    clipSlots = await trackDict[track].get('clip_slots')
-  }
-  hasClip = await clipSlots[clipSlotIndex].get("has_clip")
+  let clipSlots = await trackDict[track].get('clip_slots')
+  hasClip = clipSlots[clipSlotIndex].raw.has_clip
   let loopCount = 0
   while (!hasClip) {
     loopCount = loopCount + 1
-    hasClip = await clipSlots[clipSlotIndex].get("has_clip")
+    hasClip = clipSlots[clipSlotIndex].raw.has_clip
   }
   if (loopCount) {
     console.log("looped waiting for clip slot to have clip")
@@ -564,6 +574,7 @@ const beat = async (beats) => {
   processingBeat = true
   var beatStart = (new Date()).getTime()
   await updateTime(beats)
+  var failed = await transitionFailed()
   // if the distance between now and the end of the currently playing song matches the distance between the next song's intial point and the point we want it to start at
   if (timeToStartNextSong()) {
     initialized = true
@@ -595,7 +606,7 @@ const beat = async (beats) => {
     currentState = await currentStatus()
     currentState.message = "status"
     sendMsg(JSON.stringify(currentState))
-  } else if (await transitionFailed()) {
+  } else if (failed) {
     console.log("Transition failed")
     if (!stalled) {
       const paramMin = await state[getOtherChannel()].reverb.get('min')
@@ -689,8 +700,11 @@ function timeToStartNextSong() {
 }
 
 const transitionFailed = async () => {
-  return !(await (await getClip(getOtherChannel(), 0)).get('is_playing')) &&
-    !(await (await getClip(currentChannel, 0)).get('is_playing'))
+  let clipA = await getClip("A", 0)
+  let clipB = await getClip("B", 0)
+  let clipAPlaying = await clipA.get('is_playing')
+  let clipBPlaying = await clipB.get('is_playing')
+  return !clipAPlaying && !clipBPlaying
 }
 
 const songHasFinished = async () => {
@@ -709,7 +723,7 @@ const startNextSong = async () => {
   var startMeasure = Date.now()
   nextSongClip = await getClip(getOtherChannel(), 0)
   await nextSongClip.fire()
-  console.log(await nextSongClip.get("name"))
+  console.log(nextSongClip.raw.name)
   console.log("startNextSong timing: " + (Date.now() - startMeasure).toString())
   state[getOtherChannel()].played = true
 
@@ -810,6 +824,93 @@ const loadLoops = async () => {
   console.log("load loop duration: ", (new Date()).getTime() - loopStart)
 }
 
+const loadLoopsArrangement = async (currentSong, currentTime) => {
+  currentLoops = []
+  //  var keyRequirements = "key BETWEEN " + (currentKey - 1).toString() + " AND " + (currentKey + 1).toString() 
+  var bpmRequirements = "bpm BETWEEN " + (currentSong.bpm - 15).toString() + " AND " + (currentSong.bpm + 15).toString() // TODO: implement wrap around
+
+  var results = await db.prepare("SELECT name, key FROM loops WHERE " + bpmRequirements + " AND key >= 0 and name NOT IN ('" + currentSong.loops.join("','") + "') ORDER BY RANDOM()").all()
+  var preferredLoops = await db.prepare("SELECT name, key FROM loops WHERE name IN ('" + currentSong.loops.join("','") + "') AND key >= 0").all()
+
+  var loopStart = (new Date()).getTime()
+  var normalLoopCount = 8;
+  for (var i = 0; i < normalLoopCount; i++) {
+    loop = {
+      preferred: false
+    }
+    pool = results
+    // verify we have preferred loops and that they are in the right track
+    if (preferredLoops.length > i && preferredLoops[i].name in loops) {
+      pool = preferredLoops
+      loop.preferred = true
+    }
+    var destination = "loop." + (i + 1).toString()
+    if (!(pool[i].name in loops)) {
+      console.log("LOOP NOT FOUND: ")
+      console.log(pool[i].name)
+    }
+    loop.name = pool[i].name
+    await trackDict[destination].duplicateClipToArrangement(loops[pool[i].name].clip.raw.id, currentTime)
+    const loopClip = await getClip(destination, 0)
+    var pitchCorrection = currentKey - parseInt(pool[i].key)
+    if (pitchCorrection > 6) {
+      pitchCorrection = pitchCorrection - 12
+    }
+    if (pitchCorrection <= -6) {
+      pitchCorrection = pitchCorrection + 12
+    }
+    await loopClip.set("pitch_coarse", pitchCorrection)
+    //    await loopClip.set("ram_mode", 1)
+    currentLoops.push(loop)
+  }
+
+  // perc loops
+  var percLoopCount = 4
+  var results = await db.prepare("SELECT name, key FROM loops WHERE " + bpmRequirements + " AND key < 0 AND name NOT IN ('" + currentSong.loops.join("','") + "') ORDER BY RANDOM()").all()
+  var preferredLoops = await db.prepare("SELECT name, key FROM loops WHERE name IN ('" + currentSong.loops.join("','") + "') AND key < 0").all()
+  for (var i = 0; i < percLoopCount; i++) {
+    loop = {
+      preferred: false
+    }
+    name = results[i].name
+    // verify we have preferred loops and that they are in the right track
+    if (currentSong.loops.length > i && currentSong.loops[i] in percLoops) {
+      name = currentSong.loops[i]
+      loop.preferred = true
+    }
+    loop.name = name
+    var destination = "perc." + (i + 1).toString()
+
+    if (!(name in percLoops)) {
+      console.log("PERC LOOP NOT FOUND: ")
+      console.log(name)
+    }
+    await trackDict[destination].duplicateClipToArrangement(percLoops[name].clip.raw.id, currentTime)
+    //   var loopClip = await getClip(destination, 1)
+    //    loopClip.set("ram_mode", 1)
+    currentLoops.push(loop)
+  }
+
+  midiLoopCount = 4
+  midiLoopSelection = randomCombination(Object.keys(midiLoops), midiLoopCount)
+  for (var i = 0; i < midiLoopCount; i++) {
+    name = midiLoopSelection[i]
+    var destination = "loop.midi." + (i + 1).toString()
+    await trackDict[destination].duplicateClipToArrangement(midiLoops[name].clip.raw.id, currentTime)
+  }
+
+  percMidiLoopCount = 2
+  percMidiLoopSelection = randomCombination(Object.keys(percMidiLoops), percMidiLoopCount)
+  for (var i = 0; i < percMidiLoopCount; i++) {
+    name = percMidiLoopSelection[i]
+    var destination = "perc.midi." + (i + 1).toString()
+    await trackDict[destination].duplicateClipToArrangement(percMidiLoops[name].clip.raw.id, currentTime)
+  }
+
+  console.log("load loop duration: ", (new Date()).getTime() - loopStart)
+}
+
+
 const pickNextSong = async () => {
   // get current song
   const currentSong = await getCurrentSong()
@@ -870,13 +971,13 @@ function choseSong(song) {
 
 let lastSong = {}
 const songCache = {}
-const getSong = async (songName) => {
-  if (songName in songCache) {
+const getSong = async (songName, section = "end") => {
+  if (songName in songCache && section === "end") {
     return songCache[songName]
   }
 
   // get current song end details
-  var query = "SELECT bpm, key, time, syncopated, intensity, dont, preferred, song, loops, tags FROM songs WHERE song = '" + songName + "' AND section = 'end';"
+  var query = `SELECT bpm, key, time, syncopated, intensity, dont, preferred, song, loops, tags FROM songs WHERE song = '${songName}' AND section = '${section}';`
   var results = await db.prepare(query).all()
 
   songObj = {
@@ -891,11 +992,13 @@ const getSong = async (songName) => {
     "loops": fieldToArray(results[0].loops),
     "tags": fieldToArray(results[0].tags)
   }
-  songCache[songName] = songObj
+  if (section === "end") {
+    songCache[songName] = songObj
+  }
   return songObj
 }
 const getCurrentSong = async () => {
-  const currentSongName = await (await getClip(currentChannel, 0)).get('name')
+  const currentSongName = (await getClip(currentChannel, 0)).raw.name
   return getSong(currentSongName)
 
 }
@@ -916,9 +1019,10 @@ function buildNextSongQuery(currentSong, matchKey, loopBpm) {
       intensityArray.push("'" + currentSong.intensity[i] + "'")
     }
   }
-  var intensityRequirements = "intensity IN (" + intensityArray.join(',') + ")"
-  var rhythmRequirements = "syncopated = " + currentSong.syncopated
+  var intensityRequirements = "intensity = 'low'"
   var keyRequirements = "key BETWEEN " + (currentKey - 1).toString() + " AND " + (currentKey + 1).toString() // TODO: implement wrap around
+
+	//
   if (currentKey === 11) {
     keyRequirements = "key in (10, 11, 0)"
   }
@@ -941,6 +1045,11 @@ function buildNextSongQuery(currentSong, matchKey, loopBpm) {
   var startSection = "section = 'start'"
   
   let startTime = state[currentChannel].end - state[currentChannel].currentPosition - 1
+  if (startTime < 0) {
+    console.log(currentSong)
+    startTime = currentSong.time
+  }
+  console.log("startTIme ", startTime)
   let timeRequirements = ""
   if (startTime >= 0) {
     timeRequirements = "time BETWEEN 0 AND " + startTime.toString()
@@ -950,13 +1059,19 @@ function buildNextSongQuery(currentSong, matchKey, loopBpm) {
   }
 
   var newSong = []
+  // don't play songs that have already been played
   for (var i = 0; i < songHistory.length; i++) {
     newSong.push("song NOT LIKE '" + songHistory[i] + "%'")
   }
+  // don't play songs that are in the dont list
   for (var i = 0; i < currentSong.dont.length; i++) {
     if (currentSong.dont[i]) {
       newSong.push("song NOT LIKE '" + currentSong.dont[i] + "%'")
     }
+  }
+  // don't play songs by the same artist
+  if (currentSong.song.split('.').length > 1) {
+    newSong.push("song NOT LIKE '%." + currentSong.song.split('.')[1] + "%'")
   }
 
   //  var random = " ORDER BY RANDOM()"
@@ -964,13 +1079,12 @@ function buildNextSongQuery(currentSong, matchKey, loopBpm) {
   if (songCounter % 2) {
     random = " ORDER BY RANDOM()"
   }
-  var requirementsArray = [rhythmRequirements, startSection, bpmRequirements]
+  var requirementsArray = [startSection, bpmRequirements, intensityRequirements]
   if (timeRequirements) {
     requirementsArray.push(timeRequirements)
   }
   if (matchKey) {
     requirementsArray.push(keyRequirements)
-    requirementsArray.push(intensityRequirements) // temporary until i add more keys
   }
   var requirements = requirementsArray.join(" AND ")
   if (newSong.length) {
@@ -1008,10 +1122,14 @@ function findPreferredSong(currentSong, results) {
     }
   }
   if (isTesting) {
-    console.log("IGNORE MATCH CAUSE TESTING")
-    match = null;
+    console.log("FILTER OUT PREFERRED SONGS WHEN TESTING")
+    filtered_results = results.filter((result) => currentSong.preferred.indexOf(result.song) == -1)
+    match = filtered_results[0];
   }
   if (!match) {
+    if (isTesting) {
+      console.log("EXHAUSTED OPTIONS")
+    }
     match = results[0]
   }
   console.log(match)
@@ -1024,8 +1142,9 @@ const setNextSong = async (nextSongName) => {
   const targetClip = await getClip(getOtherChannel(), 0)
 
   // overwrite original song copy
-  let currentSongName = await targetClip.get("name")
+  let currentSongName = targetClip.raw.name
   console.log(currentSongName)
+  await clips[currentSongName].clip.set("pitch_coarse", 0)
   await targetClipSlot.duplicateClipTo(clips[currentSongName].clipSlot)
 
   await clips[nextSongName].clipSlot.duplicateClipTo(targetClipSlot)
@@ -1060,7 +1179,7 @@ function setTransition(nextSong) {
 
 const initialize = async () => {
   // cleanup B clip if it exists
-  if (await (await getClipSlot("B", 0)).get('has_clip')) {
+  if ((await getClipSlot("B", 0)).raw.has_clip) {
     (await getClipSlot("B", 0)).deleteClip
   }
   songHistory.push(startingTrack.split('.')[0])
@@ -1068,8 +1187,8 @@ const initialize = async () => {
   // queuing up first song
   const targetClipSlot = await getClipSlot(currentChannel, 0)
   await clips[startingTrack].clipSlot.duplicateClipTo(targetClipSlot)
-  const nextSong = await getClip(currentChannel, 0)
-  await nextSong.set("ram_mode", 1)
+//  const nextSong = await getClip(currentChannel, 0)
+//  await nextSong.set("ram_mode", 1)
   await targetClipSlot.fire()
   const otherClipSlot = await getClipSlot(getOtherChannel(), 0)
   await otherClipSlot.stop()
@@ -1092,6 +1211,41 @@ const initialize = async () => {
   await state["A"].reverb.set('value', minValueA)
   const minValueB = await state["B"].reverb.get('min')
   await state["B"].reverb.set('value', minValueB)
+}
+
+async function render(startingSongName, isTesting, renderSongCount) {
+  let currentTime = 0
+  currentSong = await getSong(startingSongName)
+  // we only set the bpm at the beginning cause we can't do arrangement automation
+  await ableton.song.set("tempo", currentSong.bpm)
+  currentKey = currentSong.key
+  songHistory = [currentSong.song.split('.')[0]]
+  for (let i = 0; i<renderSongCount; i++) {
+    // set key
+    var difference = currentKey - parseInt(currentSong.key)
+    while (difference > 6) {
+      difference = difference - 12
+    }
+    while (difference < -6) {
+      difference = difference + 12
+    }
+    await clips[currentSong.song].clip.set("pitch_coarse", difference)
+    await trackDict[currentChannel].duplicateClipToArrangement(clips[currentSong.song].clip.raw.id, currentTime)
+    await clips[currentSong.song].clip.set("pitch_coarse", 0)
+    await loadLoopsArrangement(currentSong, currentTime)
+
+    // change channel
+    currentChannel = getOtherChannel()
+
+    // buildNextSongQuery provides end time
+    let results = await db.prepare(buildNextSongQuery(currentSong, true)).all()
+    results = [findPreferredSong(currentSong, results)]
+    var nextSong = results[0]
+    currentTime = currentTime + currentSong.time - nextSong.time
+    songHistory.push(nextSong.song.split('.')[0])
+    // getSong provides start time
+    currentSong = await getSong(nextSong.song)
+  }
 }
 
 function is_playing(status) {
@@ -1119,14 +1273,16 @@ async function setNotedMidiKey() {
     const pitch_shift = devices[0]
     const parameters = await pitch_shift.get('parameters')
     for (const parameter of parameters) {
-      const parameterName = await parameter.get('name')
+      const parameterName = parameter.raw.name
       if (parameterName === "Pitch") {
           parameter.set('value', -(6 - currentKey))
       }
     }
 }
 
+var beatStart = (new Date()).getTime()
 init().then(function() {
+  console.log((new Date()).getTime() - beatStart)
   const server = app.listen(3000)
   console.log("server listening")
 })

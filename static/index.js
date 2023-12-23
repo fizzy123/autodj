@@ -5,8 +5,8 @@ function clearTransitionUI() {
   $("#song-key").val("")
   $("#song-bpm").val("")
   $("#song-end-time").val("")
-  $(".song-dont").val("")
-  $(".song-preferred").val("")
+  $("#work .song-dont").val("")
+  $("#work .song-preferred").val("")
 
   $("#next-song-name").text("")
   $("#next-song-key").val("")
@@ -74,8 +74,8 @@ function loadTransition(data) {
   $("#song-key").val(data.song.key)
   $("#song-bpm").val(data.song.bpm)
   $("#song-end-time").val(data.song.time)
-  $(".song-dont").val(data.song.dont)
-  $(".song-preferred").val(data.song.preferred)
+  $("#work .song-dont").val(data.song.dont)
+  $("#work .song-preferred").val(data.song.preferred)
 
   $("#next-song-name").text(data.nextSong.song)
   $("#next-song-key").val(data.nextSong.key)
@@ -89,6 +89,7 @@ function loadWork(data) {
     let expandSongCheckbox = $("<input>")
     expandSongCheckbox.prop("name", "transition-songs")
     expandSongCheckbox.prop("type", "radio")
+    expandSongCheckbox.addClass("song-option")
     expandSongCheckbox.data("song", expandSong.song)
     expandSongCheckbox.data("transition", "expand")
 
@@ -109,6 +110,7 @@ function loadWork(data) {
         let fixSongCheckbox = $("<input>")
         fixSongCheckbox.prop("name", "transition-songs")
         fixSongCheckbox.prop("type", "radio")
+        fixSongCheckbox.addClass("song-option")
         fixSongCheckbox.data("song", fixSong.song)
         fixSongCheckbox.data("transition", tag)
 
@@ -143,14 +145,14 @@ function loadState(data) {
   }
   if (data.lastSong.song) {
     console.log(data)
-    $(".song-dont").prop( "disabled", false );
-    $(".song-preferred").prop( "disabled", false );
+    $("#play .song-dont").prop( "disabled", false );
+    $("#play .song-preferred").prop( "disabled", false );
   }
   $("#current-song-name").text(data.currentSong.song)
   if (Object.keys(data.lastSong).length > 0) {
     $("#last-song-name").text(data.lastSong.song)
-    $(".song-dont").val(data.lastSong.dont)
-    $(".song-preferred").val(data.lastSong.preferred)
+    $("#play .song-dont").val(data.lastSong.dont)
+    $("#play .song-preferred").val(data.lastSong.preferred)
 
     // set tags
     $("#starting-song").prop({
@@ -188,12 +190,11 @@ function loadState(data) {
     loopWrapper.append(loopName)
     $("#current-loops").append(loopWrapper)
   }
-
 }
 
-function saveTransition() {
-  let dont = $(".song-dont").val()
-  let preferred = $(".song-preferred").val()
+function savePlayTransition() {
+  let dont = $("#play .song-dont").val()
+  let preferred = $("#play .song-preferred").val()
 
   $.ajax({
     url: "/song",
@@ -207,8 +208,30 @@ function saveTransition() {
     success: function (res) {
       state.lastSong.preferred = preferred
       state.lastSong.dont = dont
-      $(".song-dont").val(dont)
-      $(".song-preferred").val(preferred)
+      $("#play .song-dont").val(dont)
+      $("#play .song-preferred").val(preferred)
+    }
+  })
+}
+
+function saveWorkTransition() {
+  let dont = $("#work .song-dont").val()
+  let preferred = $("#work .song-preferred").val()
+
+  $.ajax({
+    url: "/song",
+    method: "POST",
+    contentType: "application/json",
+    data: JSON.stringify({
+      name: state.lastSong.name,
+      dont: dont,
+      preferred: preferred,
+    }),
+    success: function (res) {
+      state.lastSong.preferred = preferred
+      state.lastSong.dont = dont
+      $("#work .song-dont").val(dont)
+      $("#work .song-preferred").val(preferred)
     }
   })
 }
@@ -307,6 +330,8 @@ window.onload = function() {
       } else if (msg.message === "init-complete") {
         $("#init-loading").hide()
         $("#show-play").click()
+      } else if (msg.message === "render-complete") {
+        $("#render-loading").hide()
       }
     }
   };
@@ -361,13 +386,33 @@ window.onload = function() {
       }
     })
   })
+  $("#render").click(function () {
+    let startingSong = $("#starting-song-container input:checked").prop("value")
+    let isTesting = $("#is-testing").prop("checked")
+    let renderSongCount = $("#render-song-count").val()
+
+    $.ajax({
+      url: "/render",
+      method: "POST",
+      contentType: "application/json",
+      data: JSON.stringify({
+        startingSong: startingSong,
+        isTesting: isTesting,
+	renderSongCount: renderSongCount
+      }),
+      success: function (res) {
+        $("#render-loading").show()
+      }
+    })
+  })
   $("#transition-setup").click(function () {
-    let transitionSong = $("#transitions input:checked").data("song")
-    let transition = $("#transitions input:checked").data("transition")
+    let transitionSong = $("#transitions .song-option:checked").data("song")
+    let transition = $("#transitions .song-option:checked").data("transition")
 
     loadedTransition = {
       name: transitionSong,
       transition: transition,
+      reverse: $("#reverse-setup").is(":checked"),
     }
     $.ajax({
       url: "/setup-transition",
@@ -379,8 +424,10 @@ window.onload = function() {
   })
   $(".transition-field").change(transitionSongUpdate)
   $("#clear-transition").click(clearTransition)
-  $(".song-dont").change(saveTransition)
-  $(".song-preferred").change(saveTransition)
+  $("#play .song-dont").change(savePlayTransition)
+  $("#play .song-preferred").change(savePlayTransition)
+  $("#work .song-dont").change(saveWorkTransition)
+  $("#work .song-preferred").change(saveWorkTransition)
 
   // load starting songs
   loadStartingSongs();

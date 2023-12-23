@@ -1,4 +1,4 @@
-const db = require('better-sqlite3')('D:/Dropbox/User Library/Presets/Instruments/Max Instrument/songs.db');
+const db = require('better-sqlite3')('C:/Users/fizzz/Dropbox/User Library/Presets/Instruments/Max Instrument/songs.db');
 (async () => {
   const songName = process.argv[2]
   let getSongQuery = `SELECT tags FROM songs where song = '${songName}' AND section = 'end';`

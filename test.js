@@ -1,13 +1,11 @@
 const { Ableton } = require("ableton-js");
-const ableton = new Ableton();
+const ableton = new Ableton({ logger: console });
 
 (async () => {
-  let remover = await ableton.song.addListener("current_song_time", (async (time) => {
-    console.log(1)
-  }));
-  await remover()
-  ableton.song.addListener("current_song_time", (async (time) => {
-    console.log(2)
-  }));
+  let start = (new Date()).getTime()
+  await ableton.start();
+  let time = await ableton.song.get("current_song_time");
+  console.log(time)
   console.log("all set")
+  console.log(((new Date()).getTime() - start))
 })()
