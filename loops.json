@@ -1,0 +1,2694 @@
+{
+  "3005": {
+    "bpm": 83,
+    "key": 11
+  },
+  "3_strikes": {
+    "bpm": 84,
+    "key": 2
+  },
+  "40oz": {
+    "bpm": 140,
+    "key": 7
+  },
+  "a million miles away.1": {
+    "bpm": 136,
+    "key": 1
+  },
+  "a million miles away.2": {
+    "bpm": 136,
+    "key": 3
+  },
+  "a_portrait": {
+    "bpm": 150,
+    "key": 2
+  },
+  "a_song_about_nap": {
+    "bpm": 81,
+    "key": 4
+  },
+  "aaaaah": {
+    "bpm": 156,
+    "key": -1
+  },
+  "advance": {
+    "bpm": 156,
+    "key": 4
+  },
+  "after_the_lights_failed": {
+    "bpm": 131,
+    "key": 7
+  },
+  "airport terminal": {
+    "bpm": 137,
+    "key": 1
+  },
+  "alien superstar.1": {
+    "bpm": 124,
+    "key": 11
+  },
+  "alien superstar.2": {
+    "bpm": 124,
+    "key": 11
+  },
+  "alien superstar.3": {
+    "bpm": 124,
+    "key": 11
+  },
+  "alien superstar.4": {
+    "bpm": 124,
+    "key": 11
+  },
+  "alive": {
+    "bpm": 143,
+    "key": 4
+  },
+  "all night.1": {
+    "bpm": 136,
+    "key": 7
+  },
+  "all night.2": {
+    "bpm": 136,
+    "key": 7
+  },
+  "all night.3": {
+    "bpm": 136,
+    "key": 7
+  },
+  "all the small things.1": {
+    "bpm": 147,
+    "key": 8
+  },
+  "all the small things.2": {
+    "bpm": 147,
+    "key": 8
+  },
+  "all_i_need": {
+    "bpm": 128,
+    "key": 7
+  },
+  "all_thats_left": {
+    "bpm": 130,
+    "key": 11
+  },
+  "all_the_sand_in_all_the_sea": {
+    "bpm": 125,
+    "key": 0
+  },
+  "always": {
+    "bpm": 89,
+    "key": 5
+  },
+  "apologetic_shoulderblades": {
+    "bpm": 89,
+    "key": 9
+  },
+  "archers.1": {
+    "bpm": 148,
+    "key": 10
+  },
+  "archers.2": {
+    "bpm": 148,
+    "key": 10
+  },
+  "archers.3": {
+    "bpm": 148,
+    "key": 10
+  },
+  "archers.perc": {
+    "bpm": 112,
+    "key": -1
+  },
+  "around_us": {
+    "bpm": 140,
+    "key": 11
+  },
+  "arp.1": {
+    "bpm": 147,
+    "key": 5
+  },
+  "arp.2": {
+    "bpm": 133,
+    "key": 4
+  },
+  "arp.3": {
+    "bpm": 130,
+    "key": 4
+  },
+  "assma": {
+    "bpm": 148,
+    "key": -1
+  },
+  "at the bottom.1": {
+    "bpm": 80,
+    "key": 8
+  },
+  "at the bottom.2": {
+    "bpm": 80,
+    "key": 8
+  },
+  "at the bottom.3": {
+    "bpm": 80,
+    "key": 8
+  },
+  "atta_blues": {
+    "bpm": 148,
+    "key": 2
+  },
+  "awake": {
+    "bpm": 130,
+    "key": 4
+  },
+  "backstreet_freestyle": {
+    "bpm": 150,
+    "key": -1
+  },
+  "bad_wings": {
+    "bpm": 140,
+    "key": 6
+  },
+  "bb": {
+    "bpm": 159,
+    "key": 0
+  },
+  "be_calm": {
+    "bpm": 133,
+    "key": 7
+  },
+  "be_the_one": {
+    "bpm": 84,
+    "key": 2
+  },
+  "be_there": {
+    "bpm": 155,
+    "key": 2
+  },
+  "beat.3": {
+    "bpm": 133,
+    "key": -1
+  },
+  "beat.4": {
+    "bpm": 86,
+    "key": -1
+  },
+  "beat.6": {
+    "bpm": 84,
+    "key": -1
+  },
+  "beat.7": {
+    "bpm": 138,
+    "key": -1
+  },
+  "beat.8": {
+    "bpm": 148,
+    "key": -1
+  },
+  "beatbox": {
+    "bpm": 86,
+    "key": -1
+  },
+  "beauty_of_the_unhidden_heart": {
+    "bpm": 150,
+    "key": 11
+  },
+  "bed": {
+    "bpm": 96,
+    "key": 3
+  },
+  "bell.1": {
+    "bpm": 120,
+    "key": 8
+  },
+  "bell.2": {
+    "bpm": 90,
+    "key": 5
+  },
+  "bell.3": {
+    "bpm": 150,
+    "key": 4
+  },
+  "bell.4": {
+    "bpm": 143,
+    "key": 4
+  },
+  "bell.5": {
+    "bpm": 133,
+    "key": 4
+  },
+  "bell.6": {
+    "bpm": 142,
+    "key": 6
+  },
+  "bell.7": {
+    "bpm": 147,
+    "key": 8
+  },
+  "bell.8": {
+    "bpm": 160,
+    "key": 0
+  },
+  "bell.9": {
+    "bpm": 142,
+    "key": 11
+  },
+  "belly": {
+    "bpm": 131,
+    "key": 7
+  },
+  "bet you wanna.1": {
+    "bpm": 111,
+    "key": 3
+  },
+  "bet you wanna.2": {
+    "bpm": 111,
+    "key": 3
+  },
+  "bet you wanna.3": {
+    "bpm": 111,
+    "key": 3
+  },
+  "beware_the_dog": {
+    "bpm": 125,
+    "key": 0
+  },
+  "big_things_do_remarkable": {
+    "bpm": 133,
+    "key": 4
+  },
+  "black_mambo": {
+    "bpm": 83,
+    "key": 4
+  },
+  "black_rainbow": {
+    "bpm": 86,
+    "key": 5
+  },
+  "blessings": {
+    "bpm": 81,
+    "key": 4
+  },
+  "blindfolds_aside": {
+    "bpm": 144,
+    "key": 2
+  },
+  "blip.1": {
+    "bpm": 147,
+    "key": 8
+  },
+  "blip.2": {
+    "bpm": 160,
+    "key": 0
+  },
+  "blistered_hands": {
+    "bpm": 83,
+    "key": 4
+  },
+  "blocks.1": {
+    "bpm": 143,
+    "key": 4
+  },
+  "blocks.2": {
+    "bpm": 148,
+    "key": 2
+  },
+  "bodyline": {
+    "bpm": 142,
+    "key": 2
+  },
+  "borderline": {
+    "bpm": 140,
+    "key": 7
+  },
+  "boring_horror": {
+    "bpm": 88,
+    "key": 5
+  },
+  "braille": {
+    "bpm": 137,
+    "key": 11
+  },
+  "brambles": {
+    "bpm": 125,
+    "key": 8
+  },
+  "branenberg_stomp.1": {
+    "bpm": 84,
+    "key": 4
+  },
+  "branenberg_stomp.2": {
+    "bpm": 84,
+    "key": 4
+  },
+  "brass.1": {
+    "bpm": 147,
+    "key": 8
+  },
+  "brass.2": {
+    "bpm": 142,
+    "key": 11
+  },
+  "brazil": {
+    "bpm": 125,
+    "key": 0
+  },
+  "breakneck_speed": {
+    "bpm": 84,
+    "key": 2
+  },
+  "breezeblocks": {
+    "bpm": 148,
+    "key": 2
+  },
+  "broccoli.1": {
+    "bpm": 83,
+    "key": 11
+  },
+  "broccoli.2": {
+    "bpm": 83,
+    "key": 11
+  },
+  "broken_lungs": {
+    "bpm": 131,
+    "key": 7
+  },
+  "broken_necks": {
+    "bpm": 138,
+    "key": 7
+  },
+  "brush": {
+    "bpm": 144,
+    "key": -1
+  },
+  "bubble_tea": {
+    "bpm": 81,
+    "key": 5
+  },
+  "bubblegum_popcorn": {
+    "bpm": 84,
+    "key": 2
+  },
+  "bubbles": {
+    "bpm": 130,
+    "key": -1
+  },
+  "bubbly": {
+    "bpm": 149,
+    "key": 1
+  },
+  "burn_a_church": {
+    "bpm": 81,
+    "key": 4
+  },
+  "burn_dub": {
+    "bpm": 156,
+    "key": 4
+  },
+  "bye bye bye.1": {
+    "bpm": 86,
+    "key": 7
+  },
+  "bye bye bye.2": {
+    "bpm": 86,
+    "key": 7
+  },
+  "canal_paradise": {
+    "bpm": 125,
+    "key": 0
+  },
+  "cannons": {
+    "bpm": 159,
+    "key": 0
+  },
+  "cant_copy": {
+    "bpm": 159,
+    "key": 0
+  },
+  "cant_hold_us": {
+    "bpm": 148,
+    "key": 2
+  },
+  "capsize": {
+    "bpm": 92,
+    "key": 11
+  },
+  "carol_of_the_bells": {
+    "bpm": 83,
+    "key": 4
+  },
+  "change_your_life": {
+    "bpm": 159,
+    "key": 0
+  },
+  "cherry_blossom": {
+    "bpm": 84,
+    "key": 9
+  },
+  "cherry_blossom_color_season": {
+    "bpm": 86,
+    "key": 0
+  },
+  "chinese_chars": {
+    "bpm": 86,
+    "key": 9
+  },
+  "chippy.1": {
+    "bpm": 120,
+    "key": 8
+  },
+  "chippy.10": {
+    "bpm": 142,
+    "key": 11
+  },
+  "chippy.11": {
+    "bpm": 142,
+    "key": 11
+  },
+  "chippy.12": {
+    "bpm": 142,
+    "key": 11
+  },
+  "chippy.2": {
+    "bpm": 88,
+    "key": 5
+  },
+  "chippy.3": {
+    "bpm": 81,
+    "key": 5
+  },
+  "chippy.4": {
+    "bpm": 133,
+    "key": 7
+  },
+  "chippy.5": {
+    "bpm": 142,
+    "key": 6
+  },
+  "chippy.6": {
+    "bpm": 147,
+    "key": 8
+  },
+  "chippy.7": {
+    "bpm": 147,
+    "key": 8
+  },
+  "chippy.8": {
+    "bpm": 142,
+    "key": 11
+  },
+  "chippy.9": {
+    "bpm": 142,
+    "key": 11
+  },
+  "chloroform": {
+    "bpm": 140,
+    "key": 7
+  },
+  "choir.1": {
+    "bpm": 150,
+    "key": 4
+  },
+  "choir.2": {
+    "bpm": 147,
+    "key": 8
+  },
+  "choir.3": {
+    "bpm": 147,
+    "key": 1
+  },
+  "chronicle": {
+    "bpm": 140,
+    "key": 7
+  },
+  "clap.1": {
+    "bpm": 120,
+    "key": -1
+  },
+  "clap.2": {
+    "bpm": 143,
+    "key": -1
+  },
+  "clap.3": {
+    "bpm": 144,
+    "key": -1
+  },
+  "clear.1": {
+    "bpm": 145,
+    "key": 11
+  },
+  "clear.2": {
+    "bpm": 145,
+    "key": 11
+  },
+  "click.1": {
+    "bpm": 130,
+    "key": 11
+  },
+  "click.2": {
+    "bpm": 130,
+    "key": 4
+  },
+  "click.3": {
+    "bpm": 148,
+    "key": 1
+  },
+  "cluster_a": {
+    "bpm": 86,
+    "key": 0
+  },
+  "cold_shoulder": {
+    "bpm": 90,
+    "key": 2
+  },
+  "coma.1": {
+    "bpm": 152,
+    "key": 1
+  },
+  "coma.2": {
+    "bpm": 152,
+    "key": 1
+  },
+  "corridorz": {
+    "bpm": 150,
+    "key": 4
+  },
+  "crash.1": {
+    "bpm": 142,
+    "key": -1
+  },
+  "crash.2": {
+    "bpm": 160,
+    "key": -1
+  },
+  "cream_soda": {
+    "bpm": 124,
+    "key": 0
+  },
+  "creole": {
+    "bpm": 86,
+    "key": 0
+  },
+  "crystal_clear": {
+    "bpm": 84,
+    "key": 2
+  },
+  "daisy.1": {
+    "bpm": 111,
+    "key": 5
+  },
+  "daisy.2": {
+    "bpm": 111,
+    "key": 5
+  },
+  "dandelion": {
+    "bpm": 134,
+    "key": 9
+  },
+  "dark_blue_angel": {
+    "bpm": 86,
+    "key": 0
+  },
+  "dawn": {
+    "bpm": 81,
+    "key": 5
+  },
+  "dawn_of_the_dead": {
+    "bpm": 131,
+    "key": 7
+  },
+  "daydream": {
+    "bpm": 125,
+    "key": 0
+  },
+  "dear_my_love.1": {
+    "bpm": 86,
+    "key": 0
+  },
+  "dear_my_love.2": {
+    "bpm": 86,
+    "key": 0
+  },
+  "degausser.1": {
+    "bpm": 144,
+    "key": 3
+  },
+  "degausser.2": {
+    "bpm": 144,
+    "key": 3
+  },
+  "degausser.3": {
+    "bpm": 144,
+    "key": 3
+  },
+  "degausser.4": {
+    "bpm": 144,
+    "key": 3
+  },
+  "delay": {
+    "bpm": 156,
+    "key": -1
+  },
+  "densmore": {
+    "bpm": 94,
+    "key": 10
+  },
+  "didnt_have_to_go": {
+    "bpm": 83,
+    "key": 4
+  },
+  "digital": {
+    "bpm": 143,
+    "key": 4
+  },
+  "distorted.2": {
+    "bpm": 81,
+    "key": 5
+  },
+  "distorted.3": {
+    "bpm": 160,
+    "key": 0
+  },
+  "divinity.1": {
+    "bpm": 138,
+    "key": 7
+  },
+  "divinity.2": {
+    "bpm": 96,
+    "key": 10
+  },
+  "dog_days_are_over": {
+    "bpm": 155,
+    "key": 2
+  },
+  "dont take the money.1": {
+    "bpm": 112,
+    "key": 8
+  },
+  "dont take the money.2": {
+    "bpm": 112,
+    "key": 8
+  },
+  "dont take the money.3": {
+    "bpm": 112,
+    "key": 8
+  },
+  "dr_mario": {
+    "bpm": 89,
+    "key": 9
+  },
+  "drawn_to_you": {
+    "bpm": 125,
+    "key": 0
+  },
+  "dreams": {
+    "bpm": 94,
+    "key": 5
+  },
+  "drift": {
+    "bpm": 125,
+    "key": 0
+  },
+  "drove_through_ghosts_to_get_here": {
+    "bpm": 142,
+    "key": 2
+  },
+  "drumsticks.1": {
+    "bpm": 147,
+    "key": -1
+  },
+  "drumsticks.10": {
+    "bpm": 133,
+    "key": -1
+  },
+  "drumsticks.11": {
+    "bpm": 147,
+    "key": -1
+  },
+  "drumsticks.12": {
+    "bpm": 147,
+    "key": -1
+  },
+  "drumsticks.2": {
+    "bpm": 147,
+    "key": -1
+  },
+  "drumsticks.3": {
+    "bpm": 147,
+    "key": -1
+  },
+  "drumsticks.4": {
+    "bpm": 150,
+    "key": -1
+  },
+  "drumsticks.5": {
+    "bpm": 147,
+    "key": -1
+  },
+  "drumsticks.6": {
+    "bpm": 160,
+    "key": -1
+  },
+  "drumsticks.7": {
+    "bpm": 80,
+    "key": -1
+  },
+  "drumsticks.9": {
+    "bpm": 148,
+    "key": -1
+  },
+  "dry_the_river": {
+    "bpm": 150,
+    "key": 4
+  },
+  "dry_the_river.perc": {
+    "bpm": 150,
+    "key": -1
+  },
+  "dust": {
+    "bpm": 89,
+    "key": 2
+  },
+  "early_birthday": {
+    "bpm": 90,
+    "key": 5
+  },
+  "eleven_drums": {
+    "bpm": 155,
+    "key": 2
+  },
+  "energy.2": {
+    "bpm": 115,
+    "key": 3
+  },
+  "energy.3": {
+    "bpm": 115,
+    "key": 3
+  },
+  "energy.4": {
+    "bpm": 115,
+    "key": 3
+  },
+  "equestrian": {
+    "bpm": 125,
+    "key": 0
+  },
+  "eudaimonia_overture": {
+    "bpm": 90,
+    "key": 2
+  },
+  "eulogy": {
+    "bpm": 84,
+    "key": -1
+  },
+  "eunoia": {
+    "bpm": 133,
+    "key": 4
+  },
+  "evening_at_maries": {
+    "bpm": 84,
+    "key": 2
+  },
+  "everchanging": {
+    "bpm": 142,
+    "key": 8
+  },
+  "failing_flailing": {
+    "bpm": 133,
+    "key": 4
+  },
+  "falling_down": {
+    "bpm": 142,
+    "key": 2
+  },
+  "feel_it_in_your_heart": {
+    "bpm": 125,
+    "key": 0
+  },
+  "feel_this_way": {
+    "bpm": 133,
+    "key": 7
+  },
+  "feeling_this": {
+    "bpm": 83,
+    "key": 0
+  },
+  "feels": {
+    "bpm": 125,
+    "key": 0
+  },
+  "finale": {
+    "bpm": 83,
+    "key": 4
+  },
+  "finish_line": {
+    "bpm": 90,
+    "key": 2
+  },
+  "first_rendez_vous": {
+    "bpm": 88,
+    "key": 5
+  },
+  "fitzpleasure": {
+    "bpm": 148,
+    "key": 2
+  },
+  "fizzy_resort": {
+    "bpm": 81,
+    "key": 5
+  },
+  "flash": {
+    "bpm": 133,
+    "key": -1
+  },
+  "flawless.1": {
+    "bpm": 137,
+    "key": 11
+  },
+  "flawless.2": {
+    "bpm": 137,
+    "key": 11
+  },
+  "flawless.3": {
+    "bpm": 137,
+    "key": 11
+  },
+  "flawless.4": {
+    "bpm": 137,
+    "key": 11
+  },
+  "flawless.5": {
+    "bpm": 137,
+    "key": 11
+  },
+  "flow": {
+    "bpm": 84,
+    "key": 2
+  },
+  "flower_flower": {
+    "bpm": 124,
+    "key": 0
+  },
+  "flute.1": {
+    "bpm": 142,
+    "key": 8
+  },
+  "flute.10": {
+    "bpm": 150,
+    "key": 11
+  },
+  "flute.11": {
+    "bpm": 148,
+    "key": 2
+  },
+  "flute.2": {
+    "bpm": 120,
+    "key": 8
+  },
+  "flute.3": {
+    "bpm": 81,
+    "key": 5
+  },
+  "flute.4": {
+    "bpm": 142,
+    "key": 5
+  },
+  "flute.5": {
+    "bpm": 88,
+    "key": 5
+  },
+  "flute.6": {
+    "bpm": 131,
+    "key": 4
+  },
+  "flute.7": {
+    "bpm": 142,
+    "key": 6
+  },
+  "flute.8": {
+    "bpm": 86,
+    "key": 0
+  },
+  "flute.9": {
+    "bpm": 142,
+    "key": 11
+  },
+  "follow_through": {
+    "bpm": 121,
+    "key": 7
+  },
+  "forever_1": {
+    "bpm": 143,
+    "key": 11
+  },
+  "forever_in_silence": {
+    "bpm": 96,
+    "key": 10
+  },
+  "fox_tales": {
+    "bpm": 89,
+    "key": 2
+  },
+  "fresh_static_snow": {
+    "bpm": 91,
+    "key": 5
+  },
+  "galaxy.1": {
+    "bpm": 83,
+    "key": 8
+  },
+  "galaxy.2": {
+    "bpm": 83,
+    "key": 8
+  },
+  "gay_pirates": {
+    "bpm": 89,
+    "key": 2
+  },
+  "get_olde_second_wind": {
+    "bpm": 83,
+    "key": 4
+  },
+  "ghost": {
+    "bpm": 86,
+    "key": 9
+  },
+  "girlfriend": {
+    "bpm": 138,
+    "key": 7
+  },
+  "glitch": {
+    "bpm": 156,
+    "key": 4
+  },
+  "glitchy.1": {
+    "bpm": 133,
+    "key": -1
+  },
+  "glitchy.2": {
+    "bpm": 150,
+    "key": -1
+  },
+  "glitchy.3": {
+    "bpm": 143,
+    "key": -1
+  },
+  "go_do": {
+    "bpm": 140,
+    "key": 0
+  },
+  "god is a woman.1": {
+    "bpm": 145,
+    "key": 2
+  },
+  "god is a woman.2": {
+    "bpm": 145,
+    "key": 2
+  },
+  "god is a woman.3": {
+    "bpm": 145,
+    "key": 2
+  },
+  "god is a woman.4": {
+    "bpm": 145,
+    "key": 2
+  },
+  "god is a woman.5": {
+    "bpm": 145,
+    "key": 2
+  },
+  "golden_ticket": {
+    "bpm": 86,
+    "key": 5
+  },
+  "goldmine": {
+    "bpm": 152,
+    "key": 1
+  },
+  "good": {
+    "bpm": 84,
+    "key": 2
+  },
+  "good_day": {
+    "bpm": 90,
+    "key": 2
+  },
+  "greengum": {
+    "bpm": 96,
+    "key": 10
+  },
+  "guitar.1": {
+    "bpm": 81,
+    "key": 5
+  },
+  "guitar.2": {
+    "bpm": 143,
+    "key": 4
+  },
+  "gunslinger": {
+    "bpm": 84,
+    "key": 2
+  },
+  "hand_drums": {
+    "bpm": 130,
+    "key": -1
+  },
+  "hand_in_hand": {
+    "bpm": 150,
+    "key": 2
+  },
+  "harlem_river_blues": {
+    "bpm": 155,
+    "key": 2
+  },
+  "harm": {
+    "bpm": 125,
+    "key": 0
+  },
+  "harp.1": {
+    "bpm": 147,
+    "key": 8
+  },
+  "harp.2": {
+    "bpm": 120,
+    "key": 8
+  },
+  "harp.3": {
+    "bpm": 86,
+    "key": 5
+  },
+  "harp.4": {
+    "bpm": 130,
+    "key": 4
+  },
+  "harp.5": {
+    "bpm": 160,
+    "key": 0
+  },
+  "harp.6": {
+    "bpm": 147,
+    "key": 11
+  },
+  "harp.7": {
+    "bpm": 147,
+    "key": 11
+  },
+  "heart": {
+    "bpm": 125,
+    "key": 0
+  },
+  "heart_racer": {
+    "bpm": 131,
+    "key": 7
+  },
+  "heartbeat": {
+    "bpm": 130,
+    "key": -1
+  },
+  "heaven": {
+    "bpm": 155,
+    "key": 3
+  },
+  "heavy_bells": {
+    "bpm": 147,
+    "key": 1
+  },
+  "hej_lollipop": {
+    "bpm": 83,
+    "key": 4
+  },
+  "helix.1": {
+    "bpm": 96,
+    "key": 10
+  },
+  "helix.2": {
+    "bpm": 96,
+    "key": 10
+  },
+  "helix_nebula": {
+    "bpm": 150,
+    "key": 0
+  },
+  "higher": {
+    "bpm": 89,
+    "key": 2
+  },
+  "holychild": {
+    "bpm": 118,
+    "key": -1
+  },
+  "home": {
+    "bpm": 130,
+    "key": 4
+  },
+  "hope_and_ruin": {
+    "bpm": 138,
+    "key": 7
+  },
+  "horchata": {
+    "bpm": 152,
+    "key": 8
+  },
+  "horn.1": {
+    "bpm": 138,
+    "key": 7
+  },
+  "horns": {
+    "bpm": 156,
+    "key": 4
+  },
+  "how_i_feel": {
+    "bpm": 81,
+    "key": 0
+  },
+  "how_many_lovers": {
+    "bpm": 86,
+    "key": 5
+  },
+  "humming": {
+    "bpm": 150,
+    "key": 2
+  },
+  "hyperactive": {
+    "bpm": 86,
+    "key": 9
+  },
+  "hypergeek": {
+    "bpm": 89,
+    "key": 9
+  },
+  "hypnotize": {
+    "bpm": 155,
+    "key": 2
+  },
+  "i wanna get better": {
+    "bpm": 95,
+    "key": 0
+  },
+  "i_aint_saying_he_a_gold_digga": {
+    "bpm": 96,
+    "key": 10
+  },
+  "i_mean_something": {
+    "bpm": 144,
+    "key": 2
+  },
+  "i_need_you": {
+    "bpm": 142,
+    "key": 6
+  },
+  "i_want_to_be_naked": {
+    "bpm": 84,
+    "key": 9
+  },
+  "ice cream.1": {
+    "bpm": 80,
+    "key": 0
+  },
+  "ice cream.2": {
+    "bpm": 80,
+    "key": 0
+  },
+  "ice cream.3": {
+    "bpm": 80,
+    "key": 0
+  },
+  "ice cream.4": {
+    "bpm": 80,
+    "key": 0
+  },
+  "if_a_song_could_get_me_you": {
+    "bpm": 90,
+    "key": 2
+  },
+  "im_serious_im_sorry": {
+    "bpm": 159,
+    "key": 0
+  },
+  "im_sorry": {
+    "bpm": 140,
+    "key": 7
+  },
+  "imaginary_cities": {
+    "bpm": 125,
+    "key": 0
+  },
+  "in_for_the_kill": {
+    "bpm": 140,
+    "key": 7
+  },
+  "in_russian": {
+    "bpm": 160,
+    "key": 0
+  },
+  "indian_sun": {
+    "bpm": 84,
+    "key": 9
+  },
+  "innocence": {
+    "bpm": 140,
+    "key": 11
+  },
+  "inside_out": {
+    "bpm": 144,
+    "key": 2
+  },
+  "into_the_sun": {
+    "bpm": 88,
+    "key": 5
+  },
+  "itching_on_a_photograph": {
+    "bpm": 90,
+    "key": 2
+  },
+  "its_not_you_its_me": {
+    "bpm": 138,
+    "key": 7
+  },
+  "its_strange": {
+    "bpm": 86,
+    "key": 9
+  },
+  "japan_air": {
+    "bpm": 140,
+    "key": 11
+  },
+  "jesus.1": {
+    "bpm": 88,
+    "key": 10
+  },
+  "jesus.2": {
+    "bpm": 88,
+    "key": 10
+  },
+  "jesus.3": {
+    "bpm": 88,
+    "key": 10
+  },
+  "jesus.4": {
+    "bpm": 88,
+    "key": 10
+  },
+  "jesus.5": {
+    "bpm": 88,
+    "key": 10
+  },
+  "jump": {
+    "bpm": 84,
+    "key": 9
+  },
+  "just_a_shock": {
+    "bpm": 149,
+    "key": 3
+  },
+  "just_dive": {
+    "bpm": 130,
+    "key": 4
+  },
+  "just_for_now": {
+    "bpm": 160,
+    "key": 0
+  },
+  "ka_ba_ta": {
+    "bpm": 127,
+    "key": 8
+  },
+  "kata_wareji": {
+    "bpm": 133,
+    "key": 7
+  },
+  "keep_u_warm": {
+    "bpm": 131,
+    "key": 7
+  },
+  "kids": {
+    "bpm": 83,
+    "key": 4
+  },
+  "kids again.1": {
+    "bpm": 113,
+    "key": 6
+  },
+  "kids again.2": {
+    "bpm": 113,
+    "key": 6
+  },
+  "kill_jill": {
+    "bpm": 142,
+    "key": 2
+  },
+  "king_in_me": {
+    "bpm": 144,
+    "key": -1
+  },
+  "kiradoki_harmony": {
+    "bpm": 142,
+    "key": 2
+  },
+  "kiss": {
+    "bpm": 133,
+    "key": 7
+  },
+  "know_who_you_are": {
+    "bpm": 96,
+    "key": 10
+  },
+  "la de dah": {
+    "bpm": 104,
+    "key": 3
+  },
+  "la_lune": {
+    "bpm": 143,
+    "key": 4
+  },
+  "latch": {
+    "bpm": 139,
+    "key": 6
+  },
+  "latte": {
+    "bpm": 86,
+    "key": 9
+  },
+  "laughing_hard_or_crying": {
+    "bpm": 160,
+    "key": 0
+  },
+  "lawn_knives": {
+    "bpm": 85,
+    "key": 5
+  },
+  "left_alone": {
+    "bpm": 144,
+    "key": 2
+  },
+  "lend me your voice": {
+    "bpm": 115,
+    "key": 3
+  },
+  "lets_do_our_best": {
+    "bpm": 138,
+    "key": 7
+  },
+  "life_coach": {
+    "bpm": 87,
+    "key": 3
+  },
+  "life_in_technicolor": {
+    "bpm": 133,
+    "key": 4
+  },
+  "lifeproof": {
+    "bpm": 131,
+    "key": 7
+  },
+  "light": {
+    "bpm": 84,
+    "key": 9
+  },
+  "like_a_mouse": {
+    "bpm": 83,
+    "key": 4
+  },
+  "limousine.1": {
+    "bpm": 153,
+    "key": 10
+  },
+  "limousine.2": {
+    "bpm": 153,
+    "key": 10
+  },
+  "liquor_stains": {
+    "bpm": 124,
+    "key": 0
+  },
+  "lollipop_kiss": {
+    "bpm": 125,
+    "key": 0
+  },
+  "lone": {
+    "bpm": 150,
+    "key": 11
+  },
+  "long_distance": {
+    "bpm": 89,
+    "key": 2
+  },
+  "lotus": {
+    "bpm": 150,
+    "key": 2
+  },
+  "lounge": {
+    "bpm": 90,
+    "key": 2
+  },
+  "love.1": {
+    "bpm": 120,
+    "key": 0
+  },
+  "love.2": {
+    "bpm": 135,
+    "key": 11
+  },
+  "love_incredible": {
+    "bpm": 84,
+    "key": 9
+  },
+  "love_lust": {
+    "bpm": 159,
+    "key": 0
+  },
+  "lucky": {
+    "bpm": 83,
+    "key": 4
+  },
+  "madness": {
+    "bpm": 96,
+    "key": 5
+  },
+  "may_the_road": {
+    "bpm": 131,
+    "key": 7
+  },
+  "maybe_your_smile_will": {
+    "bpm": 131,
+    "key": 8
+  },
+  "mellow_out": {
+    "bpm": 84,
+    "key": 2
+  },
+  "memories_that_you_call.1": {
+    "bpm": 90,
+    "key": 2
+  },
+  "memories_that_you_call.2": {
+    "bpm": 159,
+    "key": 0
+  },
+  "merry_go_round": {
+    "bpm": 89,
+    "key": 2
+  },
+  "meteor_eschat": {
+    "bpm": 143,
+    "key": 5
+  },
+  "midas_touch": {
+    "bpm": 156,
+    "key": 4
+  },
+  "midsummer madness.1": {
+    "bpm": 90,
+    "key": 5
+  },
+  "midsummer madness.2": {
+    "bpm": 90,
+    "key": 5
+  },
+  "midsummer madness.3": {
+    "bpm": 90,
+    "key": 5
+  },
+  "midsummer madness.4": {
+    "bpm": 90,
+    "key": 5
+  },
+  "million_dollar_bills": {
+    "bpm": 84,
+    "key": 2
+  },
+  "mirrors": {
+    "bpm": 154,
+    "key": 11
+  },
+  "missing_peace": {
+    "bpm": 140,
+    "key": 7
+  },
+  "monkey_bars": {
+    "bpm": 90,
+    "key": 2
+  },
+  "monogamy_is_a_type_of_wood": {
+    "bpm": 89,
+    "key": 9
+  },
+  "moonbase_blues": {
+    "bpm": 89,
+    "key": 2
+  },
+  "more_colors": {
+    "bpm": 84,
+    "key": 2
+  },
+  "music_box.1": {
+    "bpm": 120,
+    "key": 8
+  },
+  "music_box.2": {
+    "bpm": 120,
+    "key": 8
+  },
+  "music_box.3": {
+    "bpm": 154,
+    "key": 11
+  },
+  "my_backwards_walk": {
+    "bpm": 89,
+    "key": 9
+  },
+  "my_kinda_woman": {
+    "bpm": 84,
+    "key": 2
+  },
+  "nan_demonai_ya": {
+    "bpm": 84,
+    "key": 2
+  },
+  "never_be_like_you": {
+    "bpm": 131,
+    "key": 7
+  },
+  "next_to_me": {
+    "bpm": 93,
+    "key": 11
+  },
+  "nipple_cider": {
+    "bpm": 151,
+    "key": 2
+  },
+  "no_better": {
+    "bpm": 147,
+    "key": 1
+  },
+  "no_greater_love.2": {
+    "bpm": 81,
+    "key": 4
+  },
+  "nomad_firs": {
+    "bpm": 81,
+    "key": 4
+  },
+  "octahate": {
+    "bpm": 84,
+    "key": 5
+  },
+  "offering": {
+    "bpm": 138,
+    "key": 7
+  },
+  "oh_canyon": {
+    "bpm": 125,
+    "key": 0
+  },
+  "oh_love": {
+    "bpm": 81,
+    "key": 4
+  },
+  "oh_my_love": {
+    "bpm": 151,
+    "key": 2
+  },
+  "one_time": {
+    "bpm": 84,
+    "key": 2
+  },
+  "origin": {
+    "bpm": 84,
+    "key": 2
+  },
+  "out_of_it": {
+    "bpm": 150,
+    "key": 2
+  },
+  "overdose": {
+    "bpm": 124,
+    "key": 0
+  },
+  "partition": {
+    "bpm": 93,
+    "key": 3
+  },
+  "pastries": {
+    "bpm": 125,
+    "key": 0
+  },
+  "pensacola": {
+    "bpm": 138,
+    "key": 7
+  },
+  "perc.10": {
+    "bpm": 81,
+    "key": -1
+  },
+  "perc.11": {
+    "bpm": 159,
+    "key": -1
+  },
+  "perc.12": {
+    "bpm": 80,
+    "key": -1
+  },
+  "perc.13": {
+    "bpm": 131,
+    "key": -1
+  },
+  "perc.14": {
+    "bpm": 120,
+    "key": -1
+  },
+  "perc.15": {
+    "bpm": 142,
+    "key": -1
+  },
+  "perc.17": {
+    "bpm": 142,
+    "key": -1
+  },
+  "perc.18": {
+    "bpm": 96,
+    "key": -1
+  },
+  "perc.19": {
+    "bpm": 96,
+    "key": -1
+  },
+  "perc.20": {
+    "bpm": 147,
+    "key": -1
+  },
+  "perc.8": {
+    "bpm": 142,
+    "key": -1
+  },
+  "perc.9": {
+    "bpm": 87,
+    "key": -1
+  },
+  "perc1": {
+    "bpm": 120,
+    "key": -1
+  },
+  "perc2": {
+    "bpm": 142,
+    "key": -1
+  },
+  "perc3": {
+    "bpm": 147,
+    "key": -1
+  },
+  "perc4": {
+    "bpm": 128,
+    "key": -1
+  },
+  "perc5": {
+    "bpm": 120,
+    "key": -1
+  },
+  "perc6": {
+    "bpm": 120,
+    "key": -1
+  },
+  "perc7": {
+    "bpm": 120,
+    "key": -1
+  },
+  "philosophize": {
+    "bpm": 136,
+    "key": 8
+  },
+  "pillowtalk": {
+    "bpm": 141,
+    "key": 11
+  },
+  "pilot_jones": {
+    "bpm": 130,
+    "key": 4
+  },
+  "pixel_forest": {
+    "bpm": 138,
+    "key": 7
+  },
+  "pizzacato.1": {
+    "bpm": 140,
+    "key": 7
+  },
+  "pizzacato.2": {
+    "bpm": 140,
+    "key": 8
+  },
+  "pizzacato.3": {
+    "bpm": 147,
+    "key": 1
+  },
+  "platinum": {
+    "bpm": 140,
+    "key": 7
+  },
+  "pls_stay_the_night": {
+    "bpm": 124,
+    "key": 0
+  },
+  "pluck.1": {
+    "bpm": 120,
+    "key": 8
+  },
+  "pluck.2": {
+    "bpm": 147,
+    "key": 6
+  },
+  "pluck.3": {
+    "bpm": 140,
+    "key": 8
+  },
+  "pluck.4": {
+    "bpm": 147,
+    "key": 11
+  },
+  "pocari": {
+    "bpm": 148,
+    "key": 2
+  },
+  "popinjay": {
+    "bpm": 142,
+    "key": 2
+  },
+  "positive_force": {
+    "bpm": 96,
+    "key": 10
+  },
+  "power": {
+    "bpm": 147,
+    "key": 11
+  },
+  "pressure": {
+    "bpm": 147,
+    "key": 1
+  },
+  "pretty_things_happen": {
+    "bpm": 125,
+    "key": 0
+  },
+  "prolongation": {
+    "bpm": 83,
+    "key": 4
+  },
+  "promises": {
+    "bpm": 125,
+    "key": 0
+  },
+  "prove_me_wrong": {
+    "bpm": 86,
+    "key": 9
+  },
+  "pure honey.1": {
+    "bpm": 124,
+    "key": 7
+  },
+  "pure honey.2": {
+    "bpm": 124,
+    "key": 7
+  },
+  "pure honey.3": {
+    "bpm": 124,
+    "key": 7
+  },
+  "pure honey.4": {
+    "bpm": 124,
+    "key": 7
+  },
+  "pure honey.5": {
+    "bpm": 124,
+    "key": 7
+  },
+  "pure honey.6": {
+    "bpm": 124,
+    "key": 7
+  },
+  "pure honey.7": {
+    "bpm": 124,
+    "key": 7
+  },
+  "pure honey.8": {
+    "bpm": 124,
+    "key": 7
+  },
+  "pure honey.9": {
+    "bpm": 124,
+    "key": 7
+  },
+  "q_and_a": {
+    "bpm": 84,
+    "key": 9
+  },
+  "rabbit_onesie": {
+    "bpm": 81,
+    "key": 5
+  },
+  "rafstraumur": {
+    "bpm": 125,
+    "key": 0
+  },
+  "rail": {
+    "bpm": 145,
+    "key": 6
+  },
+  "raise_some_hell": {
+    "bpm": 155,
+    "key": 2
+  },
+  "reach_out_to_the_truth": {
+    "bpm": 84,
+    "key": 9
+  },
+  "realize": {
+    "bpm": 143,
+    "key": 4
+  },
+  "religion": {
+    "bpm": 148,
+    "key": 2
+  },
+  "rely": {
+    "bpm": 120,
+    "key": 8
+  },
+  "repeat_pleasure": {
+    "bpm": 131,
+    "key": 7
+  },
+  "resting_stone": {
+    "bpm": 140,
+    "key": 7
+  },
+  "ringtone remix.1": {
+    "bpm": 110,
+    "key": 11
+  },
+  "ringtone remix.2": {
+    "bpm": 110,
+    "key": 11
+  },
+  "ringtone remix.3": {
+    "bpm": 110,
+    "key": 11
+  },
+  "ringtone remix.4": {
+    "bpm": 110,
+    "key": 11
+  },
+  "river_song": {
+    "bpm": 86,
+    "key": 0
+  },
+  "roadside": {
+    "bpm": 136,
+    "key": 0
+  },
+  "rock": {
+    "bpm": 96,
+    "key": 10
+  },
+  "royals": {
+    "bpm": 84,
+    "key": 9
+  },
+  "runaway": {
+    "bpm": 149,
+    "key": 11
+  },
+  "running_behind": {
+    "bpm": 118,
+    "key": 8
+  },
+  "safe_house": {
+    "bpm": 160,
+    "key": 0
+  },
+  "safety_animals": {
+    "bpm": 160,
+    "key": 0
+  },
+  "sakurai": {
+    "bpm": 140,
+    "key": 7
+  },
+  "samantha": {
+    "bpm": 138,
+    "key": 7
+  },
+  "same_drugs": {
+    "bpm": 90,
+    "key": 2
+  },
+  "same_love": {
+    "bpm": 93,
+    "key": 11
+  },
+  "same_mistakes": {
+    "bpm": 81,
+    "key": 4
+  },
+  "san_fran": {
+    "bpm": 96,
+    "key": 10
+  },
+  "sarah": {
+    "bpm": 124,
+    "key": 0
+  },
+  "say_it": {
+    "bpm": 144,
+    "key": 2
+  },
+  "say_u_wont": {
+    "bpm": 160,
+    "key": 0
+  },
+  "search_party_animal": {
+    "bpm": 142,
+    "key": 2
+  },
+  "secondary": {
+    "bpm": 89,
+    "key": 9
+  },
+  "secret_garden": {
+    "bpm": 89,
+    "key": 9
+  },
+  "self_control": {
+    "bpm": 81,
+    "key": 4
+  },
+  "set_my_world_on_fire": {
+    "bpm": 86,
+    "key": 5
+  },
+  "seven_bridge": {
+    "bpm": 96,
+    "key": 10
+  },
+  "seventeen remix": {
+    "bpm": 82,
+    "key": 3
+  },
+  "sex_and_drugs": {
+    "bpm": 84,
+    "key": 2
+  },
+  "she_mighty_mighty": {
+    "bpm": 142,
+    "key": 2
+  },
+  "show me love": {
+    "bpm": 135,
+    "key": 9
+  },
+  "show_me_love": {
+    "bpm": 133,
+    "key": 7
+  },
+  "show_me_your_blood": {
+    "bpm": 124,
+    "key": 0
+  },
+  "show_you": {
+    "bpm": 141,
+    "key": 6
+  },
+  "since_jimmy": {
+    "bpm": 120,
+    "key": 8
+  },
+  "sink": {
+    "bpm": 138,
+    "key": 7
+  },
+  "sitar": {
+    "bpm": 149,
+    "key": 1
+  },
+  "sleepless": {
+    "bpm": 150,
+    "key": 2
+  },
+  "sloom": {
+    "bpm": 89,
+    "key": 9
+  },
+  "slow_down": {
+    "bpm": 93,
+    "key": 11
+  },
+  "smoke_and_retribution": {
+    "bpm": 142,
+    "key": 11
+  },
+  "snappy": {
+    "bpm": 120,
+    "key": -1
+  },
+  "snare.1": {
+    "bpm": 84,
+    "key": -1
+  },
+  "snare.10": {
+    "bpm": 133,
+    "key": -1
+  },
+  "snare.11": {
+    "bpm": 143,
+    "key": -1
+  },
+  "snare.12": {
+    "bpm": 90,
+    "key": -1
+  },
+  "snare.13": {
+    "bpm": 148,
+    "key": -1
+  },
+  "snare.2": {
+    "bpm": 152,
+    "key": -1
+  },
+  "snare.3": {
+    "bpm": 120,
+    "key": -1
+  },
+  "snare.4": {
+    "bpm": 83,
+    "key": -1
+  },
+  "snare.5": {
+    "bpm": 90,
+    "key": -1
+  },
+  "snare.7": {
+    "bpm": 81,
+    "key": -1
+  },
+  "snare.8": {
+    "bpm": 159,
+    "key": -1
+  },
+  "snare.9": {
+    "bpm": 86,
+    "key": -1
+  },
+  "softspeak": {
+    "bpm": 140,
+    "key": 8
+  },
+  "some.1": {
+    "bpm": 104,
+    "key": 0
+  },
+  "some.2": {
+    "bpm": 104,
+    "key": 0
+  },
+  "some.3": {
+    "bpm": 104,
+    "key": 0
+  },
+  "some.4": {
+    "bpm": 104,
+    "key": 0
+  },
+  "souvenir": {
+    "bpm": 156,
+    "key": 4
+  },
+  "speak_with_a_dofflin": {
+    "bpm": 151,
+    "key": -1
+  },
+  "spicy_boyfriend": {
+    "bpm": 89,
+    "key": 9
+  },
+  "spirits": {
+    "bpm": 84,
+    "key": 9
+  },
+  "spotlight": {
+    "bpm": 152,
+    "key": 1
+  },
+  "squish": {
+    "bpm": 156,
+    "key": -1
+  },
+  "staccato.1": {
+    "bpm": 150,
+    "key": 11
+  },
+  "staccato.2": {
+    "bpm": 150,
+    "key": 1
+  },
+  "starfriends": {
+    "bpm": 124,
+    "key": 7
+  },
+  "stars": {
+    "bpm": 160,
+    "key": 0
+  },
+  "strings.1": {
+    "bpm": 147,
+    "key": 5
+  },
+  "strings.2": {
+    "bpm": 147,
+    "key": 5
+  },
+  "strings.3": {
+    "bpm": 143,
+    "key": 4
+  },
+  "strings.4": {
+    "bpm": 133,
+    "key": 7
+  },
+  "strings.5": {
+    "bpm": 160,
+    "key": 0
+  },
+  "strings.6": {
+    "bpm": 150,
+    "key": 11
+  },
+  "strings.7": {
+    "bpm": 96,
+    "key": 11
+  },
+  "stutter": {
+    "bpm": 131,
+    "key": 4
+  },
+  "sun_models": {
+    "bpm": 125,
+    "key": 0
+  },
+  "swim": {
+    "bpm": 125,
+    "key": 0
+  },
+  "swing_tree": {
+    "bpm": 92,
+    "key": 6
+  },
+  "synth.1": {
+    "bpm": 150,
+    "key": 4
+  },
+  "synth.2": {
+    "bpm": 160,
+    "key": 0
+  },
+  "synth.3": {
+    "bpm": 142,
+    "key": 11
+  },
+  "synth.4": {
+    "bpm": 83,
+    "key": 11
+  },
+  "taipei": {
+    "bpm": 86,
+    "key": 9
+  },
+  "tappy": {
+    "bpm": 160,
+    "key": -1
+  },
+  "tappy.1": {
+    "bpm": 142,
+    "key": 8
+  },
+  "tappy.2": {
+    "bpm": 159,
+    "key": 0
+  },
+  "taxi_cab": {
+    "bpm": 84,
+    "key": 10
+  },
+  "tbh_ily": {
+    "bpm": 92,
+    "key": 5
+  },
+  "team": {
+    "bpm": 90,
+    "key": 2
+  },
+  "thank u next.1": {
+    "bpm": 107,
+    "key": 9
+  },
+  "thank u next.2": {
+    "bpm": 107,
+    "key": 9
+  },
+  "thank u next.3": {
+    "bpm": 107,
+    "key": 9
+  },
+  "the_ballad_of_mr_steak": {
+    "bpm": 133,
+    "key": 7
+  },
+  "the_echo_song": {
+    "bpm": 144,
+    "key": 2
+  },
+  "the_grass_after_winter": {
+    "bpm": 89,
+    "key": 2
+  },
+  "the_greg_saunier_retaliation": {
+    "bpm": 89,
+    "key": 9
+  },
+  "the_hound_of_blood_and_rank": {
+    "bpm": 140,
+    "key": 2
+  },
+  "the_indian_squirrel_dance": {
+    "bpm": 156,
+    "key": 4
+  },
+  "the_only_thing": {
+    "bpm": 81,
+    "key": 11
+  },
+  "the_stay_golden": {
+    "bpm": 124,
+    "key": 0
+  },
+  "the_trooper": {
+    "bpm": 83,
+    "key": 4
+  },
+  "the_voiceless.1": {
+    "bpm": 160,
+    "key": 0
+  },
+  "the_voiceless.2": {
+    "bpm": 124,
+    "key": 0
+  },
+  "they_just_havent_seen_it": {
+    "bpm": 140,
+    "key": 7
+  },
+  "thief.1": {
+    "bpm": 150,
+    "key": 2
+  },
+  "thief.2": {
+    "bpm": 150,
+    "key": 2
+  },
+  "thieves_and_kings": {
+    "bpm": 83,
+    "key": 4
+  },
+  "thinking_bout_you": {
+    "bpm": 133,
+    "key": 7
+  },
+  "this_happens": {
+    "bpm": 138,
+    "key": 7
+  },
+  "this_is_my_anime": {
+    "bpm": 89,
+    "key": 2
+  },
+  "thundertruth": {
+    "bpm": 93,
+    "key": 5
+  },
+  "tie_the_rope": {
+    "bpm": 133,
+    "key": 7
+  },
+  "tightrope": {
+    "bpm": 86,
+    "key": 9
+  },
+  "time_for_you_to_stand_up": {
+    "bpm": 89,
+    "key": 9
+  },
+  "timothy_hay": {
+    "bpm": 86,
+    "key": 0
+  },
+  "to_ribbons": {
+    "bpm": 89,
+    "key": 9
+  },
+  "tomggg": {
+    "bpm": 143,
+    "key": 4
+  },
+  "toms.1": {
+    "bpm": 147,
+    "key": -1
+  },
+  "toms.2": {
+    "bpm": 95,
+    "key": -1
+  },
+  "toms.3": {
+    "bpm": 147,
+    "key": -1
+  },
+  "toms.4": {
+    "bpm": 159,
+    "key": -1
+  },
+  "toms.5": {
+    "bpm": 150,
+    "key": -1
+  },
+  "toms.6": {
+    "bpm": 148,
+    "key": -1
+  },
+  "toms.7": {
+    "bpm": 148,
+    "key": -1
+  },
+  "too_close": {
+    "bpm": 157,
+    "key": 0
+  },
+  "too_gone": {
+    "bpm": 125,
+    "key": 0
+  },
+  "travel.1": {
+    "bpm": 128,
+    "key": 9
+  },
+  "travel.2": {
+    "bpm": 128,
+    "key": 9
+  },
+  "travel.3": {
+    "bpm": 128,
+    "key": 9
+  },
+  "treasure_hugs": {
+    "bpm": 150,
+    "key": 1
+  },
+  "truck_stop_gospel": {
+    "bpm": 88,
+    "key": 5
+  },
+  "tryer_you": {
+    "bpm": 155,
+    "key": 2
+  },
+  "tummy_treasures": {
+    "bpm": 142,
+    "key": 6
+  },
+  "tunnel_vision": {
+    "bpm": 84,
+    "key": 2
+  },
+  "twang.1": {
+    "bpm": 142,
+    "key": 8
+  },
+  "u_n_me": {
+    "bpm": 124,
+    "key": 0
+  },
+  "under_your_halo": {
+    "bpm": 133,
+    "key": 7
+  },
+  "undertale": {
+    "bpm": 140,
+    "key": 7
+  },
+  "unexplainable_stories": {
+    "bpm": 150,
+    "key": 1
+  },
+  "ur_body": {
+    "bpm": 142,
+    "key": 2
+  },
+  "us.1": {
+    "bpm": 90,
+    "key": 2
+  },
+  "us.2": {
+    "bpm": 90,
+    "key": 2
+  },
+  "vacation": {
+    "bpm": 143,
+    "key": 4
+  },
+  "vampira": {
+    "bpm": 150,
+    "key": 4
+  },
+  "vermillion": {
+    "bpm": 142,
+    "key": 2
+  },
+  "versus": {
+    "bpm": 83,
+    "key": 4
+  },
+  "vibe_walk": {
+    "bpm": 83,
+    "key": 4
+  },
+  "vocal.1": {
+    "bpm": 120,
+    "key": 8
+  },
+  "vocal.10": {
+    "bpm": 160,
+    "key": 0
+  },
+  "vocal.11": {
+    "bpm": 160,
+    "key": 0
+  },
+  "vocal.12": {
+    "bpm": 160,
+    "key": 0
+  },
+  "vocal.13": {
+    "bpm": 147,
+    "key": 11
+  },
+  "vocal.14": {
+    "bpm": 150,
+    "key": 11
+  },
+  "vocal.15": {
+    "bpm": 142,
+    "key": 11
+  },
+  "vocal.16": {
+    "bpm": 155,
+    "key": 11
+  },
+  "vocal.17": {
+    "bpm": 147,
+    "key": 1
+  },
+  "vocal.2": {
+    "bpm": 147,
+    "key": 8
+  },
+  "vocal.3": {
+    "bpm": 86,
+    "key": 5
+  },
+  "vocal.4": {
+    "bpm": 88,
+    "key": 5
+  },
+  "vocal.5": {
+    "bpm": 88,
+    "key": 5
+  },
+  "vocal.6": {
+    "bpm": 156,
+    "key": 4
+  },
+  "vocal.7": {
+    "bpm": 150,
+    "key": 4
+  },
+  "vocal.8": {
+    "bpm": 140,
+    "key": 7
+  },
+  "vocal.9": {
+    "bpm": 142,
+    "key": 6
+  },
+  "voices_in_the_dark": {
+    "bpm": 84,
+    "key": 9
+  },
+  "voodoo_vision": {
+    "bpm": 155,
+    "key": 2
+  },
+  "wait_so_long": {
+    "bpm": 84,
+    "key": 9
+  },
+  "wake_up": {
+    "bpm": 150,
+    "key": 4
+  },
+  "walcott": {
+    "bpm": 160,
+    "key": 0
+  },
+  "warm_foothills": {
+    "bpm": 96,
+    "key": 10
+  },
+  "water.1": {
+    "bpm": 142,
+    "key": -1
+  },
+  "water.2": {
+    "bpm": 166,
+    "key": 11
+  },
+  "we_bought_a_zoo": {
+    "bpm": 125,
+    "key": 8
+  },
+  "we_will_rock_you": {
+    "bpm": 83,
+    "key": 4
+  },
+  "weirdy.1": {
+    "bpm": 128,
+    "key": 8
+  },
+  "weirdy.2": {
+    "bpm": 86,
+    "key": 5
+  },
+  "what_i_know": {
+    "bpm": 90,
+    "key": 2
+  },
+  "wheels": {
+    "bpm": 144,
+    "key": 2
+  },
+  "when two become one": {
+    "bpm": 146,
+    "key": 4
+  },
+  "when_the_moment_comes": {
+    "bpm": 159,
+    "key": 0
+  },
+  "where_are_u_now.1": {
+    "bpm": 133,
+    "key": 4
+  },
+  "whisper": {
+    "bpm": 86,
+    "key": 0
+  },
+  "white_ferrari": {
+    "bpm": 138,
+    "key": 7
+  },
+  "white_lies": {
+    "bpm": 88,
+    "key": 5
+  },
+  "windy": {
+    "bpm": 142,
+    "key": 11
+  },
+  "winter_melon": {
+    "bpm": 89,
+    "key": 9
+  },
+  "winter_seeds": {
+    "bpm": 148,
+    "key": 10
+  },
+  "with": {
+    "bpm": 140,
+    "key": 7
+  },
+  "with_my_hands_covering.1": {
+    "bpm": 135,
+    "key": 7
+  },
+  "with_my_hands_covering.2": {
+    "bpm": 135,
+    "key": 8
+  },
+  "with_you": {
+    "bpm": 147,
+    "key": 1
+  },
+  "woo_song": {
+    "bpm": 124,
+    "key": 0
+  },
+  "woof_woof": {
+    "bpm": 124,
+    "key": 0
+  },
+  "workin_man_zombie": {
+    "bpm": 144,
+    "key": 2
+  },
+  "world_in_harmony": {
+    "bpm": 86,
+    "key": 0
+  },
+  "wtro": {
+    "bpm": 131,
+    "key": 7
+  },
+  "wyrd": {
+    "bpm": 156,
+    "key": -1
+  },
+  "you_dont_know_my_name": {
+    "bpm": 93,
+    "key": 5
+  },
+  "you_know_i_love_you": {
+    "bpm": 86,
+    "key": 9
+  },
+  "you_were_born": {
+    "bpm": 124,
+    "key": 0
+  },
+  "youth": {
+    "bpm": 90,
+    "key": 2
+  }
+}
