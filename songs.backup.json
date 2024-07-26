@@ -21539,7 +21539,8 @@
         "ranking": 5
       },
       "helix.kid_froopy": {
-        "ranking": 4
+        "ranking": 4,
+        "text": "rank from preferred: 4"
       },
       "4wd.xzavier_stone": {
         "ranking": 4,
@@ -21558,10 +21559,6 @@
       },
       "ghost.mystery_skulls": {
         "ranking": 2
-      },
-      "helix.kid_froopy": {
-        "ranking": 4,
-        "text": "rank from preferred: 4"
       },
       "iceland.petit_biscuit": {
         "ranking": 4,
@@ -23553,8 +23550,8 @@
         "ranking": 2
       },
       "nothing_to_lose.traction": {
-        "ranking": 5,
-        "text": "cut out part right before drop"
+        "ranking": 4,
+        "text": "rank from preferred: 2"
       },
       "cure.on_planets": {
         "ranking": 4,
@@ -23598,10 +23595,6 @@
       },
       "marble_soda.shawn_wasabi": {
         "ranking": 2
-      },
-      "nothing_to_lose.traction": {
-        "ranking": 4,
-        "text": "rank from preferred: 2"
       },
       "octahate.pusher": {
         "ranking": 2

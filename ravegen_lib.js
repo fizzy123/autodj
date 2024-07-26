@@ -33,6 +33,7 @@ let kickInfo = [
   {name: "congolese.2x", bpm: [80, 100]},
   {name: "jamaica.1.2x", bpm: [80, 100]},
   {name: "4s", bpm: [80, 160]},
+  {name: "8s", bpm: [80, 160]},
   {name: "3s", bpm: [80, 160]},
   {name: "6s", bpm: [80, 160]},
 ]
@@ -243,7 +244,7 @@ let clipMapping = {
   "vocal.14": majMelodies,
   "jesus.5": majMelodies,
   "broccoli.2": majMelodies,
-  "bubblegum_popcorn": majMelodies.filter((complement) => complement !== "guitar.1"),
+  "bubblegum_popcorn": majMelodies,
   "brambles": majMelodies,
   "cluster_a": majMelodies,
   "dear_my_love.1": majMelodies,
@@ -263,6 +264,7 @@ let clipMapping = {
   "san_fran": majMelodies,
   "you_dont_know_my_name": majMelodies,
   "taipei": majMelodies,
+  "tomggg": majMelodies,
   "truck_stop_gospel": majMelodies,
   "u_n_me": majMelodies,
   "blip.1": minMelodies,
@@ -274,17 +276,6 @@ let clipMapping = {
   "choir.3": minMelodies,
   "glitch": minMelodies,
   "bed": minMelodies,
-}
-
-reverseClipMapping = {}
-for (let key of Object.keys(clipMapping)) {
-  for (let loop of clipMapping[key]) {
-    if (reverseClipMapping[loop]) {
-      reverseClipMapping[loop].push(key)
-    } else {
-      reverseClipMapping[loop] = [key]
-    }
-  }
 }
 
 let clipTonic = {
@@ -397,6 +388,7 @@ let clipTonic = {
   "san_fran": "maj",
   "you_dont_know_my_name": "maj",
   "taipei": "maj",
+  "tomggg": "maj",
   "truck_stop_gospel": "maj",
   "u_n_me": "maj",
   "blip.1": "min",
@@ -521,52 +513,6 @@ const init = async () => {
   }
 }
 
-let processingBeat = false
-let currentBeat = 0;
-const beat = async(beats) => {
-  // trigger only on first call after new beat
-  if (currentBeat == Math.floor(beats)) {
-    return
-  }
-  currentBeat = Math.round(beats)
-  if (processingBeat) {
-    console.log("RACE CONDITION")
-    return
-  }
-  let startTime = Date.now();
-  processingBeat = true
-
-  let bpm = await ableton.song.get("tempo")
-  if (((currentBeat) % (32 * 4)) === (32 * 4 - 1)) {
-    await toggleLoop()
-  }
-  // Not awaiting since they are independent and so that we don't take too long to trigger clips.
-  if (((currentBeat) % (16 * 4)) === (4 * 4 - 1) || ((currentBeat) % (16 * 4)) === (12 * 4 - 1)) {
-    toggleHH(bpm, true)
-  }
-
-  if (((currentBeat) % (16 * 4)) === (8 * 4 - 1)) {
-    toggleKick(bpm, true)
-    toggleHH(bpm, false)
-    toggleSnare(bpm)
-  }
-  if (((currentBeat) % (16 * 4)) === (16 * 4 - 1)) {
-    if (Math.random() > 0.5) {
-      toggleKick(bpm, false)
-      toggleHH(bpm, false)
-    }
-    toggleComplement()
-    toggleSnare(bpm)
-    togglePerc(bpm)
-  }
-
-  duration = Date.now() - startTime
-  if (duration > 100) {
-    console.log(duration)
-  }
-
-  processingBeat = false
-}
 
 const renderLoop = async () => {
   await trackDict["loops"].clips[CURRENT_LOOP].clip.fire()
@@ -579,22 +525,6 @@ const renderLoop = async () => {
   }
 }
 
-const getNewLoop = (currentComplement) => {
-  if (Object.keys(clipMapping).filter(loop => !HISTORY.includes(loop)).length === 0) {
-    HISTORY = []
-  }
-  let loop
-  if (currentComplement) {
-    loop = randomChoice(reverseClipMapping[currentComplement])
-  } else {
-    loop = randomChoice(Object.keys(clipMapping)
-//    .filter(loop => !HISTORY.includes(loop)) disabling history uniqueness for now
-    )
-  }
-
-  HISTORY.push(loop)
-  return loop
-}
 
 const toggleComplement = async() => {
   if (!CURRENT_LOOP) {
@@ -608,19 +538,6 @@ const toggleComplement = async() => {
   await trackDict["complements"].clips[nextComplement].clip.fire()
 }
 
-const getNewComplement = (currentLoop) => {
-  if (!currentLoop) {
-    return
-  }
-  if (clipMapping[currentLoop].filter(loop => !HISTORY.includes(loop))) {
-    HISTORY = []
-  }
-  let nextComplement = randomChoice(clipMapping[currentLoop]
-//    .filter(loop => !HISTORY.includes(loop))
-  )
-  HISTORY.push(nextComplement)
-  return nextComplement
-}
 
 
 const toggleHH = async (bpm, toggle) => {
@@ -636,12 +553,6 @@ const toggleHH = async (bpm, toggle) => {
   }
 }
 
-const getNewHH = (bpm) => {
-    let filteredClips = hhInfo.filter((hhClip) => {
-      return hhClip.bpm[0] < bpm && hhClip.bpm[1] > bpm
-    })
-    return randomChoice(filteredClips).name
-}
 
 const toggleKick = async (bpm, toggle) => {
   if (toggle) {
@@ -656,11 +567,6 @@ const toggleKick = async (bpm, toggle) => {
   }
 }
 
-const getNewKick = (bpm) => {
-    return randomChoice(kickInfo.filter((kickClip) => {
-      return kickClip.bpm[0] < bpm && kickClip.bpm[1] > bpm
-    })).name
-}
 
 const toggleSnare = async (bpm) => {
   let nextClip = randomChoice(snareInfo.filter((snareClip) => {
@@ -670,11 +576,6 @@ const toggleSnare = async (bpm) => {
   await trackDict["snare"].chainParam.set("value", Math.floor(128 * Math.random()))
 }
 
-const getNewSnare = (bpm) => {
-  return randomChoice(snareInfo.filter((snareClip) => {
-    return snareClip.bpm[0] < bpm && snareClip.bpm[1] > bpm
-  })).name
-}
 
 const togglePerc = async (bpm) => {
   let nextClip = randomChoice(snareInfo.filter((snareClip) => {
@@ -707,17 +608,57 @@ const toggleLead = async (bpm) => {
   await nextClip.clip.fire()
 }
 
-const measureCount = 256 * 10
-const render = async () => {
+const getNewLoop = () => {
+  if (Object.keys(clipMapping).filter(loop => !HISTORY.includes(loop)).length === 0) {
+    HISTORY = []
+  }
+  let loop = randomChoice(Object.keys(clipMapping)
+//    .filter(loop => !HISTORY.includes(loop)) disabling history uniqueness for now
+  )
+  HISTORY.push(loop)
+  return loop
+}
+
+const getNewComplement = (currentLoop) => {
+  if (!currentLoop) {
+    return
+  }
+  if (clipMapping[currentLoop].filter(loop => !HISTORY.includes(loop))) {
+    HISTORY = []
+  }
+  let nextComplement = randomChoice(clipMapping[currentLoop]
+//    .filter(loop => !HISTORY.includes(loop))
+  )
+  HISTORY.push(nextComplement)
+  return nextComplement
+}
+
+const getNewHH = (bpm) => {
+    let filteredClips = hhInfo.filter((hhClip) => {
+      return hhClip.bpm[0] < bpm && hhClip.bpm[1] > bpm
+    })
+    return randomChoice(filteredClips).name
+}
+
+const getNewKick = (bpm) => {
+    return randomChoice(kickInfo.filter((kickClip) => {
+      return kickClip.bpm[0] < bpm && kickClip.bpm[1] > bpm
+    })).name
+}
+
+const getNewSnare = (bpm) => {
+  return randomChoice(snareInfo.filter((snareClip) => {
+    return snareClip.bpm[0] < bpm && snareClip.bpm[1] > bpm
+  })).name
+}
+
+const render = async (ableton, measureCount) => {
   let bpm = await ableton.song.get("tempo")
   let setLength = 4 * measureCount
   let currentTime = 0
   let currentLoop, currentLoopLength
 
   let currentComplement, currentComplementLength
-
-  let currentEnd, currentEndLength
-  let nextEndTime = 0 
 
   let currentHH, currentHHLength
 
@@ -727,55 +668,50 @@ const render = async () => {
 
   let currentPerc, currentPercLength
 
-  let lateKickStart = false
-  let chillSection = true
-  let sectionsSinceChill = 0
-
-  let snareIncluded = true
-  let snareStartAfter = 0 
-
-  let percIncluded = true
-  let percStartAfter = 0
-
   while (currentTime < setLength) {
     // loops change every 16 measures
     if (((currentTime) % (16 * 4)) === 0) {
-      let tmpLoop
-      if (currentComplement) {
-        tmpLoop = getNewLoop(currentComplement.raw.name)
-      } else {
-        tmpLoop = getNewLoop()
-      }
-      currentLoop = trackDict["loops"].clips[tmpLoop].clip
+      let newLoopName = getNewLoop()
+      currentLoop = trackDict["loops"].clips[newLoopName].clip
       currentLoopLength = await currentLoop.get("length")
+
+      if (env.key === undefined) {
+        throw new Error("clip details not provided")
+      }
+      let loopInfo = loopDict[newLoopName]
+      diff = env.key - loopInfo.key
+      if (env.key === 11 && loopInfo.key === 0) {
+        diff = -1
+      } else if (env.key === 0 && loopInfo.key === 11) {
+        diff = 1
+      }
+      await currentLoop.set("pitch_coarse", diff)
     }
+
     if (currentTime % currentLoopLength === 0) {
-      await trackDict["loops"].track.duplicateClipToArrangement(currentLoop.raw.id, currentTime)
+      await trackDict["loops"].duplicateClipToArrangement(currentLoop.raw.id, currentTime)
     }
     
-    // complements change every 16 measures
-    if (((currentTime) % (16 * 4)) === 16 * 2) {
-      let tmpComplement = getNewComplement(currentLoop.raw.name)
-      currentComplement = trackDict["complements"].clips[tmpComplement].clip
+    // complements change every 8 measures
+    if (((currentTime) % (8 * 4)) === 0) {
+      let newComplementName = getNewComplement(currentLoop.raw.name)
+      currentComplement = trackDict["complements"].clips[newComplementName].clip
       currentComplementLength = await currentComplement.get("length")
+
+      if (env.key === undefined) {
+        throw new Error("clip details not provided")
+      }
+      let loopInfo = loopDict[newComplementName]
+      diff = env.key - loopInfo.key
+      if (env.key === 11 && loopInfo.key === 0) {
+        diff = -1
+      } else if (env.key === 0 && loopInfo.key === 11) {
+        diff = 1
+      }
+      await currentLoop.set("pitch_coarse", diff)
     }
     if (currentTime % currentComplementLength === 0) {
-      await trackDict["complements"].track.duplicateClipToArrangement(currentComplement.raw.id, currentTime)
-    }
-
-    // add a melodic ending complement at the end of every 4 measures
-    if (currentTime === nextEndTime) {
-      let tmpEnd = getNewComplement(currentLoop.raw.name)
-      currentEnd = trackDict["complements"].clips[tmpEnd].clip
-      currentEndLength = await currentEnd.get("length")
-
-      if (currentEndLength <= 4 * 4) {
-        await trackDict["ends"].track.duplicateClipToArrangement(currentEnd.raw.id, currentTime + 4*4 - currentEndLength)
-        nextEndTime = nextEndTime + 16
-      } else {
-        await trackDict["ends"].track.duplicateClipToArrangement(currentEnd.raw.id, currentTime)
-        nextEndTime = nextEndTime + currentEndLength
-      }
+      await trackDict["complements"].duplicateClipToArrangement(currentComplement.raw.id, currentTime)
     }
 
     // hihats change every 8 measures and toggle on and off every 4 measures
@@ -784,79 +720,39 @@ const render = async () => {
       currentHHLength = await currentHH.get("length")
     }
     if (currentTime % currentHHLength === 0 && currentTime % (8 * 4) >= (4 * 4)) {
-      await trackDict["hh"].track.duplicateClipToArrangement(currentHH.raw.id, currentTime)
+      await trackDict["hh"].duplicateClipToArrangement(currentHH.raw.id, currentTime)
     }
 
-    // kicks change every 8 measures
-    // kicks start 1 measure late sometimes
-    // kicks cut out sometimes
-    if (((currentTime) % (8 * 4)) === 0) {
+    // kicks change every 16 measures and toggle on and off every 8 measures
+    if (((currentTime) % (16 * 4)) === 0) {
       currentKick = trackDict["kick"].clips[getNewKick(bpm)].clip
       currentKickLength = await currentKick.get("length")
-
-      if (Math.random() > 0.75) {
-        lateKickStart = true
-      }
-
-      chillSection = false
-      if (Math.random() > 0.75 && sectionsSinceChill > 2) {
-        chillSection = true
-        sectionsSinceChill = 0
-      } else {
-        sectionsSinceChill = sectionsSinceChill + 1
-      }
     }
-
-    if (currentTime % currentKickLength === 0 &&
-      !lateKickStart &&
-      !chillSection
-    ) {
-      await trackDict["kick"].track.duplicateClipToArrangement(currentKick.raw.id, currentTime)
+    if (currentTime % currentKickLength === 0 && currentTime % (16 * 4) >= (8 * 4)) {
+      await trackDict["kick"].duplicateClipToArrangement(currentKick.raw.id, currentTime)
     }
-    lateKickStart = false
 
     // snares change every 8 measures
-    // snares start 1,2 or 3 measures late sometimes
-    // snares don't get added sometimes
     if (((currentTime) % (8 * 4)) === 0) {
       let tmpSnare = getNewSnare(bpm)
       currentSnare = trackDict["snare"].clips[tmpSnare].clip
       currentSnareLength = await currentSnare.get("length")
-
-      snareIncluded = Math.random() > 0.25
-      snareStartAfter = randomChoice([0, 4, 8, 12])
     }
-    if (currentTime % currentSnareLength === 0 &&
-      snareIncluded &&
-      currentTime % (8 * 4) >= snareStartAfter
-    ) {
-      await trackDict["snare"].track.duplicateClipToArrangement(currentSnare.raw.id, currentTime)
+    if (currentTime % currentSnareLength === 0) {
+      await trackDict["snare"].duplicateClipToArrangement(currentSnare.raw.id, currentTime)
     }
 
     // perc changes every 8 measures
-    // perc start 1,2 or 3 measures late sometimes
-    // perc don't get added sometimes
     if (((currentTime) % (8 * 4)) === 0) {
       currentPerc = trackDict["perc"].clips[getNewSnare(bpm)].clip
       currentPercLength = await currentPerc.get("length")
-
-      percIncluded = Math.random() > 0.25
-      percStartAfter = randomChoice([0, 4, 8, 12])
     }
-    if (currentTime % currentPercLength === 0 &&
-      percIncluded &&
-      currentTime % (8 * 4) >= percStartAfter
-    ) {
-      await trackDict["perc"].track.duplicateClipToArrangement(currentPerc.raw.id, currentTime)
+    if (currentTime % currentPercLength === 0) {
+      await trackDict["perc"].duplicateClipToArrangement(currentPerc.raw.id, currentTime)
     }
 
     currentTime = currentTime + 4
   }
 }
 
-let startTime = performance.now()
-init().then(render).then(function() {
-  let timing = (performance.now() - startTime)/1000
-  console.log(`rendered in ${timing}s!`)
-  process.exit()
-})
+exports.render = render

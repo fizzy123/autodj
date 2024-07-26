@@ -74,16 +74,13 @@ let snareInfo = [
 
 let hhInfo = [
   {name: "fast_hh.1", bpm: [80, 160]},
-  {name: "fast_hh.2x.1", bpm: [80, 160]},
   {name: "shaker.1", bpm: [80, 160]},
   {name: "shaker.2", bpm: [80, 160]},
   {name: "shaker.3", bpm: [80, 160]},
-  {name: "hh.1", bpm: [80, 160]},
   {name: "hh.sync.3", bpm: [80, 160]},
   {name: "hh.sync.2", bpm: [80, 160]},
   {name: "hh.sync.1", bpm: [80, 160]},
   {name: "shaker.4", bpm: [80, 160]},
-  {name: "offset_hh", bpm: [80, 160]},
   {name: "offset_hh_slow", bpm: [80, 160]},
 ]
 
@@ -265,15 +262,6 @@ let clipMapping = {
   "taipei": majMelodies,
   "truck_stop_gospel": majMelodies,
   "u_n_me": majMelodies,
-  "blip.1": minMelodies,
-  "windy": minMelodies,
-  "partition": minMelodies,
-  "chippy.6": minMelodies,
-  "chippy.11": minMelodies,
-  "choir.1": minMelodies,
-  "choir.3": minMelodies,
-  "glitch": minMelodies,
-  "bed": minMelodies,
 }
 
 reverseClipMapping = {}
@@ -579,18 +567,13 @@ const renderLoop = async () => {
   }
 }
 
-const getNewLoop = (currentComplement) => {
+const getNewLoop = () => {
   if (Object.keys(clipMapping).filter(loop => !HISTORY.includes(loop)).length === 0) {
     HISTORY = []
   }
-  let loop
-  if (currentComplement) {
-    loop = randomChoice(reverseClipMapping[currentComplement])
-  } else {
-    loop = randomChoice(Object.keys(clipMapping)
+  let loop = randomChoice(Object.keys(clipMapping)
 //    .filter(loop => !HISTORY.includes(loop)) disabling history uniqueness for now
-    )
-  }
+  )
 
   HISTORY.push(loop)
   return loop
@@ -707,17 +690,15 @@ const toggleLead = async (bpm) => {
   await nextClip.clip.fire()
 }
 
-const measureCount = 256 * 10
+const measureCount = 1024
 const render = async () => {
   let bpm = await ableton.song.get("tempo")
   let setLength = 4 * measureCount
   let currentTime = 0
   let currentLoop, currentLoopLength
-
-  let currentComplement, currentComplementLength
-
-  let currentEnd, currentEndLength
-  let nextEndTime = 0 
+  let currentBass, currentBassLength
+  let currentMid, currentMidLength
+  let currentChords, currentChordsLength
 
   let currentHH, currentHHLength
 
@@ -738,44 +719,62 @@ const render = async () => {
   let percStartAfter = 0
 
   while (currentTime < setLength) {
-    // loops change every 16 measures
+    // loops change every 16 measures optionally
     if (((currentTime) % (16 * 4)) === 0) {
-      let tmpLoop
-      if (currentComplement) {
-        tmpLoop = getNewLoop(currentComplement.raw.name)
-      } else {
-        tmpLoop = getNewLoop()
-      }
+      let tmpLoop = getNewLoop()
       currentLoop = trackDict["loops"].clips[tmpLoop].clip
       currentLoopLength = await currentLoop.get("length")
     }
     if (currentTime % currentLoopLength === 0) {
       await trackDict["loops"].track.duplicateClipToArrangement(currentLoop.raw.id, currentTime)
     }
-    
-    // complements change every 16 measures
-    if (((currentTime) % (16 * 4)) === 16 * 2) {
-      let tmpComplement = getNewComplement(currentLoop.raw.name)
-      currentComplement = trackDict["complements"].clips[tmpComplement].clip
-      currentComplementLength = await currentComplement.get("length")
-    }
-    if (currentTime % currentComplementLength === 0) {
-      await trackDict["complements"].track.duplicateClipToArrangement(currentComplement.raw.id, currentTime)
-    }
 
-    // add a melodic ending complement at the end of every 4 measures
-    if (currentTime === nextEndTime) {
-      let tmpEnd = getNewComplement(currentLoop.raw.name)
-      currentEnd = trackDict["complements"].clips[tmpEnd].clip
-      currentEndLength = await currentEnd.get("length")
+    // bass changes every 16 measures optionally
+    if (((currentTime) % (16 * 4)) === 0) {
+      let bassIndex = Math.ceil(Math.random() * 26).toString()
 
-      if (currentEndLength <= 4 * 4) {
-        await trackDict["ends"].track.duplicateClipToArrangement(currentEnd.raw.id, currentTime + 4*4 - currentEndLength)
-        nextEndTime = nextEndTime + 16
-      } else {
-        await trackDict["ends"].track.duplicateClipToArrangement(currentEnd.raw.id, currentTime)
-        nextEndTime = nextEndTime + currentEndLength
+      currentBass = trackDict["bass"].clips[bassIndex].clip
+      currentBassLength = await currentBass.get("length")
+
+      if (Math.random() < 0.25) {
+        currentBass = undefined
+        currentBassLength = undefined
       }
+    }
+    if (currentTime % currentBassLength === 0 && currentBass) {
+      await trackDict["bass"].track.duplicateClipToArrangement(currentBass.raw.id, currentTime)
+    }
+
+    // mid changes every 16 measures optionally
+    if (((currentTime) % (16 * 4)) === 0) {
+      let midIndex = Math.ceil(Math.random() * 26).toString()
+
+      currentMid = trackDict["bass"].clips[midIndex].clip
+      currentMidLength = await currentMid.get("length")
+
+      if (Math.random() < 0.25) {
+        currentMid = undefined
+        currentMidLength = undefined
+      }
+    }
+    if (currentTime % currentMidLength === 0 && currentMid) {
+      await trackDict["mid"].track.duplicateClipToArrangement(currentMid.raw.id, currentTime)
+    }
+
+    // chords changes every 16 measures optionally
+    if (((currentTime) % (16 * 4)) === 0) {
+      let chordIndex = Math.ceil(Math.random() * 9).toString()
+
+      currentChord = trackDict["chords"].clips[chordIndex].clip
+      currentChordLength = await currentChord.get("length")
+
+      if (Math.random() < 0.5 && (!currentMid || !currentBass)) {
+        currentChord = undefined
+        currentChordLength = undefined
+      }
+    }
+    if (currentTime % currentChordLength === 0 && currentChord) {
+      await trackDict["chords"].track.duplicateClipToArrangement(currentChord.raw.id, currentTime)
     }
 
     // hihats change every 8 measures and toggle on and off every 4 measures

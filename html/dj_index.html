@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="static/dj_index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+<!-- using this palette: https://coolors.co/palette/f4f1de-e07a5f-3d405b-81b29a-f2cc8f -->
+    <style>
+body{
+  background-color: #222;
+  color: #f4f1de;
+  font-family: "Open Sans", sans-serif;
+}
+div{
+  display: inline-block;
+}
+.no-inline-block{
+  display: block;
+}
+.button {
+  border: 1px #666666 solid;
+}
+.selected-song{
+  background-color: #3d405b
+}
+.section{
+  border: 1px #3d405b solid;
+}
+
+.loaded-song-div {
+  padding: 5px 5px;
+}
+    </style>
+  </head>
+  <body>
+    <div id="state" class="section no-inline-block">
+      <label for="key">Key:</label>
+      <input type="text" name="key" id="state-key" class="state">
+      <br>
+
+      <label for="bpm">BPM:</label>
+      <input type="text" name="bpm" id="state-bpm" class="state">
+      <br>
+
+      <label for="lastLoadedSongName">LastLoadedSongName:</label>
+      <input type="text" name="lastLoadedSongName" id="state-last-loaded-song-name" class="state">
+      <br>
+
+      <label for="songCursor">SongCursor:</label>
+      <input type="text" name="songCursor" id="state-song-cursor" class="state">
+      <br>
+
+      <label for="currentTrack">CurrentTrack:</label>
+      <input type="text" name="currentTrack" id="state-current-track" class="state">
+      <br>
+      <br>
+
+      <input id="undo" class="button" type="button" value="Undo">
+      <br>
+      <br>
+
+      <input type="text" name="deleteSongName" id="delete-song-name">
+      <input id="delete" class="button" type="button" value="Delete">
+<!--
+      <label>History</label>
+      <div id="history"></div>
+
+      <label>LoopHistory</label>
+      <div id="history"></div>
+-->
+    </div>
+    <div id="songLoad" class="section no-inline-block">
+      <div id="select-song-load" style="max-height:50%;overflow-y:scroll;width:100%"></div>
+      <br>
+      <input id="keyChange" name="keychange" type="checkbox">
+      <label for="keyChange" >Key Change</label>
+      <br>
+      <input id="load" class="button" type="button" value="Load">
+    </div>
+<!--    <div id="loopLoad">
+      <label>Loop Load:</label>
+      <div id="loopLoadList"></div>
+</div> -->
+  </body>
+</html>
