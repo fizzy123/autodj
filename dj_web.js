@@ -476,7 +476,15 @@ app.post("/state", (req, res) => {
   return res.json({"success": true})
 })
 app.get("/get", (req, res) => {
-  return res.json(get())
+  let anyKey = false
+  if (req.query.anyKey) {
+    if ((typeof req.query.anyKey) == "boolean") {
+      anyKey = req.query.anyKey
+    } else {
+      anyKey = req.query.anyKey == "true"
+    }
+  }
+  return res.json(get(anyKey))
 })
 app.post("/load", async (req, res) => {
   await load(req.body.nextSongName, req.body.keyChange)

@@ -8,6 +8,7 @@ window.onload = function() {
   // set listeners
   $('.state').on("change", updateState)
   $('#undo').on("click", undo)
+  $('#get-all').on("click", getAll)
   $("#load").on("click", load)
   $("#delete").on("click", del)
 }
@@ -31,8 +32,8 @@ const loadEnv = async () => {
   }
 }
 
-const getSongs = async () => {
-  const res = (await axios.get("/get")).data
+const getSongs = async (anyKey = false) => {
+  const res = (await axios.get("/get", {params:{anyKey: anyKey}})).data
   $("#select-song-load").empty()
   for (let i=0;i<res.songs.length;i++) {
     let songInfo = res.songs[i]
@@ -125,4 +126,8 @@ const load = async () => {
 const del = async () => {
   await axios.post("/delete", { songName: $("#delete-song-name").val() })
   $("#delete-song-name").val("")
+}
+
+const getAll = async () => {
+  await getSongs(true)
 }
