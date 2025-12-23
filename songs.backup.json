@@ -61,6 +61,9 @@
     "startTime": 32,
     "tags": "club,hard,upbeat",
     "transitionNotes": {
+      "islands.throwing_snow": {
+        "ranking": 2
+      },
       "opus.ninajirashi": {
         "ranking": 3
       },
@@ -358,7 +361,7 @@
       "no_tourists.the_prodigy": {
         "ranking": 3
       },
-      "coyote_kisses": {
+      "ferrari.coyote_kisses": {
         "ranking": 4
       },
       "disarm_you.william_james": {
@@ -558,6 +561,10 @@
       },
       "odyssey_pt_1.krane": {
         "ranking": 2
+      },
+      "resonate.the_prodigy": {
+        "ranking": 5,
+        "text": "shorten intro halfway"
       },
       "oh_my_darling_dont_cry.run_the_jewels": {
         "ranking": 4,
@@ -1036,6 +1043,9 @@
     "tags": "syncopated,half-time",
     "notes": "slow at start but picks up in intensity",
     "transitionNotes": {
+      "no_money.chet_porter": {
+        "ranking": 4
+      },
       "better_not.hikeii": {
         "ranking": 4
       },
@@ -1186,6 +1196,9 @@
     "startTime": 32,
     "tags": "starting-song",
     "transitionNotes": {
+      "keep_on.vindata": {
+        "ranking": 5
+      },
       "closer.gill_chang": {
         "ranking": 4
       },
@@ -1294,7 +1307,7 @@
         "ranking": 2
       },
       "ok.madeon": {
-        "ranking": 5
+        "ranking": 4
       },
       "tbh_ily.kidswaste": {
         "ranking": 2
@@ -2174,6 +2187,9 @@
       "animal_friends.tenkitsune": {
         "ranking": 2
       },
+      "po_it_up.xzavier_stone": {
+        "ranking": 5
+      },
       "aseryo.naisu": {
         "ranking": 4
       },
@@ -2221,6 +2237,9 @@
       },
       "travelling_light.daydreamer": {
         "ranking": 5
+      },
+      "miracle.madeon": {
+        "ranking": 4
       },
       "coin.iu": {
         "ranking": 4
@@ -2385,6 +2404,9 @@
         "ranking": 4,
         "text": "rank from preferred: 13"
       },
+      "on_me.cool_tweens": {
+        "ranking": 4
+      },
       "one_long_firework_in_the_sky.ninajirashi": {
         "ranking": 4
       },
@@ -2425,10 +2447,14 @@
         "ranking": 2
       },
       "primavera_azul.arthur+medic": {
-        "ranking": 4
+        "ranking": 4,
+        "text": "sudden"
       },
       "dont_lose_yourself_to_this.mikeq": {
         "ranking": 4
+      },
+      "blank_spaces.sinjin_hawke": {
+        "ranking": 5
       },
       "i_still_see_your_face.cortr+swrly": {
         "ranking": 5
@@ -2531,6 +2557,10 @@
       "gravity_waves.soysauce": {
         "ranking": 4,
         "text": "rank from preferred: 10"
+      },
+      "wind_tempos.felimos": {
+        "ranking": 3,
+        "text": "key change, remove intro"
       },
       "hell.mura_masa": {
         "ranking": 2
@@ -3388,8 +3418,7 @@
         "ranking": 5
       },
       "on_me.cool_tweens": {
-        "ranking": 4,
-        "text": "rank from preferred: 2"
+        "ranking": 4
       },
       "reiwa.tomggg": {
         "ranking": 4
@@ -3663,8 +3692,7 @@
         "text": "rank from preferred: 8"
       },
       "gunshotta.famous_eno": {
-        "ranking": 4,
-        "text": "rank from preferred: 1"
+        "ranking": 5
       },
       "gyal_dem_move.falcons+juelz": {
         "ranking": 4,
@@ -4201,6 +4229,9 @@
       "i.kendrick_lamar": {
         "ranking": 2
       },
+      "好き_Suki.night_tempo+tomggg": {
+        "ranking": 2
+      },
       "look_at_the_sky.phritz": {
         "ranking": 2
       },
@@ -4235,6 +4266,9 @@
       },
       "cant_find_the_words.x&g": {
         "ranking": 4
+      },
+      "lotus_eater.mura_masa": {
+        "ranking": 2
       },
       "cloud_factory.chime": {
         "ranking": 4,
@@ -5561,6 +5595,14 @@
       "my_favorite_things.outkast": {
         "ranking": 2
       },
+      "illusion.coyote_kisses": {
+        "ranking": 4,
+        "text": "fade in"
+      },
+      "moment.haywyre": {
+        "ranking": 3,
+        "text": "fade in"
+      },
       "paradise_plaza.tenkitsune": {
         "ranking": 2
       },
@@ -5727,7 +5769,11 @@
     "endTime": 424,
     "key": 2,
     "startTime": 64,
+    "tags": "halftime",
     "transitionNotes": {
+      "wind_tempos.felimos": {
+        "ranking": 3
+      },
       "2_minutes.the_pom_poms": {
         "ranking": 2
       },
@@ -5817,8 +5863,7 @@
         "ranking": 5
       },
       "clear.shawn_wasabi": {
-        "ranking": 4,
-        "text": "rank from preferred: 0"
+        "ranking": 5
       },
       "corridors_of_time.nobel_yoo": {
         "ranking": 2
@@ -6033,6 +6078,9 @@
       },
       "phonies.dorian_electra": {
         "ranking": 4
+      },
+      "paradise.josh_pan+x&g": {
+        "ranking": 5
       },
       "boi_wit_luv.hikeii": {
         "ranking": 4
@@ -6406,9 +6454,8 @@
       "corridors_of_time.nobel_yoo": {
         "ranking": 2
       },
-      "clear.shawn_wasabi": {
-        "ranking": 2,
-        "text": "severe energy drop"
+      "feeling_fine.griz": {
+        "ranking": 4
       },
       "ferrari.coyote_kisses": {
         "ranking": 4
@@ -6811,6 +6858,10 @@
         "ranking": 4,
         "text": "rank from preferred: 3"
       },
+      "cuff_it.beyonce": {
+        "ranking": 4,
+        "text": "remove post ending"
+      },
       "helix.kid_froopy": {
         "ranking": 5
       },
@@ -6859,6 +6910,9 @@
       "call_ticketron.run_the_jewels": {
         "ranking": 3,
         "text": "vibe shift, kinda awkward"
+      },
+      "good_morning_ny.brasstracks": {
+        "ranking": 4
       },
       "sweet.bohkeh": {
         "ranking": 4
@@ -7259,6 +7313,7 @@
     "endTime": 484,
     "key": 4,
     "startTime": 0,
+    "tags": "future,intense",
     "transitionNotes": {
       "here_with_me.the_living_proof": {
         "ranking": 4,
@@ -7273,8 +7328,7 @@
         "text": "rank from preferred: 4"
       },
       "the_moment.henrik_the_artist": {
-        "ranking": 4,
-        "text": "rank from preferred: 1"
+        "ranking": 4
       },
       "wind_tempos.felimos": {
         "ranking": 4,
@@ -7298,6 +7352,9 @@
       "all_the_ways.branchez": {
         "ranking": 2
       },
+      "chromatically.haywyre": {
+        "ranking": 4
+      },
       "get_down.griz": {
         "ranking": 2
       },
@@ -7309,6 +7366,10 @@
       },
       "aseryo.naisu": {
         "ranking": 2
+      },
+      "what_weve_become.griz": {
+        "ranking": 4,
+        "text": "fade overlap"
       },
       "blushy.absrdst": {
         "ranking": 2
@@ -7347,8 +7408,7 @@
         "text": "vibe shift"
       },
       "missing_you.wingtip": {
-        "ranking": 4,
-        "text": "rank from preferred: 8"
+        "ranking": 4
       },
       "back_to_the_club.cool_tweens": {
         "ranking": 4
@@ -8575,6 +8635,9 @@
         "ranking": 4,
         "text": "rank from preferred: 2"
       },
+      "lights_down_low.zora_jones": {
+        "ranking": 5
+      },
       "10_bad_bitches.river_moon+co": {
         "ranking": 5
       },
@@ -8617,6 +8680,9 @@
       "ease.thijs_bos": {
         "ranking": 4,
         "text": "rank from preferred: 3"
+      },
+      "von_dutch.charli_xcx": {
+        "ranking": 5
       },
       "ratata.skrillex": {
         "ranking": 4
@@ -8683,6 +8749,9 @@
       "boi_wit_luv.hikeii": {
         "ranking": 4
       },
+      "on_me.cool_tweens": {
+        "ranking": 2
+      },
       "snapshot.middle_school": {
         "ranking": 4
       },
@@ -8722,6 +8791,10 @@
     "key": 2,
     "startTime": 80,
     "transitionNotes": {
+      "youve_changed_ive_changed.san_holo&chet_porter": {
+        "ranking": 4,
+        "text": "remove intro maybe?"
+      },
       "all_i_ever_wanted.laxcity": {
         "ranking": 4
       },
@@ -9116,6 +9189,9 @@
       },
       "i_still_see_your_face.san_holo": {
         "ranking": 5
+      },
+      "frog.ren_carter+liv_grace": {
+        "ranking": 4
       },
       "collect_my_love.mat_zo": {
         "ranking": 4
@@ -9592,7 +9668,8 @@
         "ranking": 4
       },
       "on_the_road.petit_biscuit": {
-        "ranking": 5
+        "ranking": 5,
+        "text": "bring in intro halfway"
       },
       "look_at_the_sky.phritz": {
         "ranking": 2
@@ -9711,8 +9788,7 @@
         "ranking": 2
       },
       "street_food.rhodz": {
-        "ranking": 4,
-        "text": "rank from preferred: 2"
+        "ranking": 4
       },
       "supernatural.hundaes": {
         "ranking": 4
@@ -9835,6 +9911,9 @@
       },
       "im_ok.kid_froopy": {
         "ranking": 2
+      },
+      "cuff_it.beyonce": {
+        "ranking": 4
       },
       "lilac.iu": {
         "ranking": 4,
@@ -10285,6 +10364,9 @@
       "go_back_home.fkj": {
         "ranking": 4
       },
+      "what_if_i_go.mura_masa": {
+        "ranking": 4
+      },
       "mine.illenium": {
         "ranking": 4
       },
@@ -10423,8 +10505,7 @@
     "tags": "starting-song",
     "transitionNotes": {
       "bad_and_boujee.omniboi": {
-        "ranking": 4,
-        "text": "rank from preferred: 2"
+        "ranking": 3
       },
       "discipline.louis_the_child": {
         "ranking": 4,
@@ -10533,6 +10614,13 @@
       },
       "butterfly.loona": {
         "ranking": 2
+      },
+      "the_anthem.griz": {
+        "ranking": 4
+      },
+      "sleepyhead.two_friends": {
+        "ranking": 4,
+        "text": "fade the last half measure out"
       },
       "celebrity.iu": {
         "ranking": 4
@@ -11156,8 +11244,7 @@
         "text": "rank from preferred: 3"
       },
       "audio.easyfun": {
-        "ranking": 4,
-        "text": "rank from preferred: 3"
+        "ranking": 5
       },
       "fellow_feeling.porter_robinson": {
         "ranking": 4
@@ -11498,15 +11585,20 @@
         "ranking": 4,
         "text": "rank from preferred: 4"
       },
+      "femmebot.charli_xcx": {
+        "ranking": 3
+      },
       "boi_wit_luv.hikeii": {
-        "ranking": 4,
-        "text": "rank from preferred: 5"
+        "ranking": 3
       },
       "dont_lose_yourself_to_this.mikeq": {
         "ranking": 2
       },
       "hot_in_it.charli_xcx": {
         "ranking": 2
+      },
+      "bpm.twin_diplomacy": {
+        "ranking": 4
       },
       "ease.thijs_bos": {
         "ranking": 4
@@ -11549,8 +11641,7 @@
         "text": "rank from preferred: 6"
       },
       "street_food.rhodz": {
-        "ranking": 4,
-        "text": "rank from preferred: 9"
+        "ranking": 5
       },
       "supernatural.hundaes": {
         "ranking": 4,
@@ -11725,6 +11816,7 @@
     "key": 0,
     "notes": "sleepless,all_the_sand_in_all_the_sea,drumsticks.9",
     "startTime": 0,
+    "tags": "delete",
     "transitionNotes": {
       "all_due_respect.run_the_jewels": {
         "ranking": 4,
@@ -12078,6 +12170,9 @@
     "key": 5,
     "startTime": 32,
     "transitionNotes": {
+      "ascension.big_wild": {
+        "ranking": 4
+      },
       "cruel.twice": {
         "ranking": 3
       },
@@ -12720,6 +12815,9 @@
       "dreams.anamanaguchi+flux_pavilion": {
         "ranking": 2
       },
+      "future_hippie_superstar.greyl": {
+        "ranking": 3
+      },
       "u_da_1.hikeii": {
         "ranking": 3
       },
@@ -12730,8 +12828,11 @@
         "ranking": 4,
         "text": "rank from preferred: 7"
       },
-      "smbdy.hikeii": {
+      "cara.thijs_bos": {
         "ranking": 4
+      },
+      "smbdy.hikeii": {
+        "ranking": 3
       },
       "sorry.onlytom": {
         "ranking": 4,
@@ -13093,6 +13194,9 @@
       "in_u.cash_bandicoot": {
         "ranking": 4,
         "text": "rank from preferred: 0"
+      },
+      "i_still_see_your_face.san_holo": {
+        "ranking": 2
       },
       "all_black.richelle+xzavier_stone+sinjin_hawke": {
         "ranking": 4
@@ -13927,6 +14031,9 @@
         "ranking": 4,
         "text": "rank from preferred: 2"
       },
+      "boom_boom_pow.lizdek": {
+        "ranking": 4
+      },
       "feng_huang.thijs_bos": {
         "ranking": 2
       },
@@ -14060,8 +14167,7 @@
     "startTime": 0,
     "transitionNotes": {
       "best_thing.louis_vivet.2": {
-        "ranking": 4,
-        "text": "rank from preferred: 0"
+        "ranking": 3
       },
       "kittens_express.tenkitsune": {
         "ranking": 4
@@ -15107,15 +15213,14 @@
     "bpm": 121,
     "endTime": 400,
     "key": 11,
-    "startTime": 48,
+    "startTime": 16,
     "transitionNotes": {
       "blurry_eyes.hotel_garuda": {
         "ranking": 4,
         "text": "rank from preferred: 2"
       },
       "boi_wit_luv.hikeii": {
-        "ranking": 4,
-        "text": "rank from preferred: 1"
+        "ranking": 3
       },
       "the_rift.beats_antique": {
         "ranking": 3
@@ -15215,12 +15320,15 @@
         "ranking": 4,
         "text": "rank from preferred: 0"
       },
+      "ninacamina.ninajirachi": {
+        "ranking": 4
+      },
       "lights_down_low.zora_jones": {
         "ranking": 2
       },
       "love_ya.pure_100": {
-        "ranking": 4,
-        "text": "rank from preferred: 2"
+        "ranking": 3,
+        "text": "overlap almost works?"
       },
       "montreal_fly.mura_masa": {
         "ranking": 4,
@@ -15289,6 +15397,9 @@
     "key": 4,
     "startTime": 32,
     "transitionNotes": {
+      "interstellar.laszlo": {
+        "ranking": 3
+      },
       "another_chance.unknown": {
         "ranking": 4
       },
@@ -15322,6 +15433,9 @@
       "gyal_dem_move.falcons+juelz": {
         "ranking": 4,
         "text": "rank from preferred: 1"
+      },
+      "mirror_maru.melvv": {
+        "ranking": 3
       },
       "opus.ninajirashi": {
         "ranking": 3
@@ -15374,7 +15488,7 @@
       },
       "yours_and_mine.cool_tweens": {
         "ranking": 4,
-        "text": "rank from preferred: 1"
+        "text": ""
       }
     },
     "name": "i_want_it.jkuch",
@@ -15463,6 +15577,10 @@
       },
       "still_looking.droeloe": {
         "ranking": 2
+      },
+      "so_many_things_to_tell_you.henrik_the_artist": {
+        "ranking": 3,
+        "text": "remove intro"
       },
       "the_coldest_click.curl_up": {
         "ranking": 2
@@ -15824,12 +15942,14 @@
         "ranking": 4,
         "text": "rank from preferred: 2"
       },
+      "2h_du_matin.manila_killa": {
+        "ranking": 4
+      },
       "mirror_maru.melvv": {
         "ranking": 4
       },
       "red_flavor.red_velvet": {
-        "ranking": 4,
-        "text": "rank from preferred: 0"
+        "ranking": 4
       },
       "the_city.madeon": {
         "ranking": 4,
@@ -16205,6 +16325,9 @@
         "ranking": 4,
         "text": "rank from preferred: 0"
       },
+      "electric_body.defunk": {
+        "ranking": 2
+      },
       "feels_right.dathan": {
         "ranking": 4
       },
@@ -16214,6 +16337,9 @@
       },
       "shadow_dances.opia": {
         "ranking": 4
+      },
+      "velours.anomalie": {
+        "ranking": 3
       },
       "story.gill_chang": {
         "ranking": 2
@@ -16407,6 +16533,9 @@
         "ranking": 4,
         "text": "overlap has too much bass overlap"
       },
+      "4u.julius_dreisig": {
+        "ranking": 4
+      },
       "all_love.hundaes": {
         "ranking": 2
       },
@@ -16421,6 +16550,10 @@
       },
       "cuff_it.beyonce": {
         "ranking": 2
+      },
+      "ferrari.coyote_kisses": {
+        "ranking": 4,
+        "text": "fade in"
       },
       "get_down.griz": {
         "ranking": 4
@@ -16509,6 +16642,9 @@
         "ranking": 4,
         "text": "rank from preferred: 8"
       },
+      "run.culprate+ghostek": {
+        "ranking": 2
+      },
       "everytime_we_touch.henrik_the_artist": {
         "ranking": 2
       },
@@ -16526,8 +16662,7 @@
         "ranking": 4
       },
       "montreal_fly.mura_masa": {
-        "ranking": 4,
-        "text": "rank from preferred: 1"
+        "ranking": 4
       },
       "my_first_time_dying.marcioz": {
         "ranking": 2
@@ -16887,6 +17022,9 @@
         "ranking": 4,
         "text": "only overlap quiet part and cut out part right before drop"
       },
+      "iceland.petit_biscuit": {
+        "ranking": 3
+      },
       "coin.iu": {
         "ranking": 4
       },
@@ -17147,7 +17285,7 @@
     "endTime": 160,
     "key": 3,
     "startTime": 32,
-    "tags": "happy.unsyncopated",
+    "tags": "happy,unsyncopated",
     "transitionNotes": {
       "interstellar.laszlo": {
         "ranking": 4,
@@ -17164,6 +17302,10 @@
       "i_still_see_your_face.cortr+swrly": {
         "ranking": 4,
         "text": "rank from preferred: 5"
+      },
+      "technicolor.madeon": {
+        "ranking": 3,
+        "text": "fade in intro"
       },
       "lights_down_low.zora_jones": {
         "ranking": 2
@@ -17316,6 +17458,7 @@
     "endTime": 368,
     "key": 3,
     "startTime": 32,
+    "notes": "TODO: maybe wrong key",
     "transitionNotes": {
       "a.i.ngel.infrared+xavi": {
         "ranking": 4,
@@ -17353,9 +17496,13 @@
     "endTime": 224,
     "key": 1,
     "startTime": 32,
+    "tags": "harmonic,minor,unsyncopated",
     "transitionNotes": {
       "all_i_ever_wanted.laxcity": {
         "ranking": 2
+      },
+      "montreal_fly.mura_masa": {
+        "ranking": 5
       },
       "dreams.anamanaguchi+flux_pavilion": {
         "ranking": 2
@@ -17500,6 +17647,9 @@
         "ranking": 5
       },
       "ferrari.coyote_kisses": {
+        "ranking": 4
+      },
+      "celebrity.iu": {
         "ranking": 4
       }
     },
@@ -17673,14 +17823,14 @@
     "endTime": 256,
     "key": 2,
     "startTime": 32,
+    "tags": "future,halftime",
     "transitionNotes": {
       "run.culprate+ghostek": {
         "ranking": 4,
         "text": "rank from preferred: 1"
       },
       "the_one.electric_mantis": {
-        "ranking": 4,
-        "text": "rank from preferred: 0"
+        "ranking": 3
       }
     },
     "name": "just_a_thought.benzel",
@@ -17813,8 +17963,7 @@
         "ranking": 4
       },
       "the_next_episode.san_holo": {
-        "ranking": 4,
-        "text": "rank from preferred: 2"
+        "ranking": 5
       }
     },
     "name": "keep_on.vindata",
@@ -17976,6 +18125,9 @@
     "startTime": 36,
     "tags": "starting-song",
     "transitionNotes": {
+      "animal_friends.tenkitsune": {
+        "ranking": 3
+      },
       "ok.madeon": {
         "ranking": 3
       },
@@ -18069,6 +18221,9 @@
     "startTime": 32,
     "tags": "trap",
     "transitionNotes": {
+      "od.polyphia": {
+        "ranking": 3
+      },
       "everytime_we_touch.henrik_the_artist": {
         "ranking": 2
       },
@@ -18085,6 +18240,9 @@
       },
       "playing_god.polyphia": {
         "ranking": 4
+      },
+      "resonate.the_prodigy": {
+        "ranking": 2
       },
       "battle_theme.nobel_yoo": {
         "ranking": 2
@@ -18253,7 +18411,7 @@
     "bpm": 140,
     "endTime": 352,
     "key": 0,
-    "startTime": 16,
+    "startTime": 32,
     "transitionNotes": {
       "do_the_runaround.absrdst": {
         "ranking": 4,
@@ -18269,6 +18427,9 @@
       },
       "only.hikeii": {
         "ranking": 4
+      },
+      "summer_plants.hi_tom": {
+        "ranking": 3
       }
     },
     "name": "lay_it_down.dzz",
@@ -18434,11 +18595,13 @@
     "endTime": 320,
     "key": 5,
     "startTime": 32,
-    "tags": "funky,unsyncopated",
+    "tags": "funky,unsyncopated,minor",
     "transitionNotes": {
       "coin.iu": {
-        "ranking": 4,
-        "text": "rank from preferred: 1"
+        "ranking": 5
+      },
+      "ratata.skrillex": {
+        "ranking": 4
       },
       "i_want_it.jkuch": {
         "ranking": 2
@@ -18614,6 +18777,9 @@
       },
       "10_bad_bitches.river_moon+co": {
         "ranking": 3
+      },
+      "lacrimosa.apache": {
+        "ranking": 4
       },
       "dont_lose_yourself_to_this.mikeq": {
         "ranking": 4
@@ -19063,6 +19229,9 @@
       "gunshotta.famous_eno": {
         "ranking": 2
       },
+      "yours_and_mine.cool_tweens": {
+        "ranking": 5
+      },
       "icarus.madeon": {
         "ranking": 2
       },
@@ -19297,13 +19466,13 @@
     "endTime": 160,
     "key": 5,
     "startTime": 32,
+    "tags": "halftime",
     "transitionNotes": {
       "a.i.ngel.infrared+xavi": {
         "ranking": 2
       },
       "impulse.haywyre": {
-        "ranking": 4,
-        "text": "rank from preferred: 0"
+        "ranking": 4
       },
       "mesa.awe": {
         "ranking": 4,
@@ -19403,6 +19572,9 @@
         "ranking": 4,
         "text": "rank from preferred: 4"
       },
+      "a.i.ngel.infrared+xavi": {
+        "ranking": 4
+      },
       "buckingham.wednesday_campanella": {
         "ranking": 2
       },
@@ -19433,8 +19605,7 @@
         "ranking": 2
       },
       "once_again": {
-        "ranking": 4,
-        "text": "rank from preferred: 1"
+        "ranking": 2
       },
       "no_apologies.big_gigantic": {
         "ranking": 4
@@ -19827,6 +19998,7 @@
     "endTime": 420,
     "key": 11,
     "startTime": 64,
+    "tags": "delete",
     "transitionNotes": {
       "crew.lido": {
         "ranking": 2
@@ -20114,7 +20286,12 @@
     "endTime": 256,
     "key": 1,
     "startTime": 32,
+    "tags": "chiptune",
     "transitionNotes": {
+      "whistle.nobel_yoo": {
+        "ranking": 3,
+        "text": "transition is alright but no smoothness"
+      },
       "crew.lido": {
         "ranking": 2
       },
@@ -20148,6 +20325,9 @@
     "transitionNotes": {
       "eve_ii.odesza": {
         "ranking": 5
+      },
+      "all_i_ever_wanted.laxcity": {
+        "ranking": 4
       },
       "mirror_maru.melvv": {
         "ranking": 4
@@ -20184,8 +20364,7 @@
         "text": "rank from preferred: 1"
       },
       "collect_my_love.mat_zo": {
-        "ranking": 4,
-        "text": "rank from preferred: 0"
+        "ranking": 4
       },
       "let_me_know.stupead": {
         "ranking": 4
@@ -20359,6 +20538,9 @@
       },
       "another_chance.unknown": {
         "ranking": 2
+      },
+      "the_fairys_wish.dzz": {
+        "ranking": 4
       },
       "here_with_me.the_living_proof": {
         "ranking": 2
@@ -20581,6 +20763,9 @@
       "animal_friends.tenkitsune": {
         "ranking": 4,
         "text": "rank from preferred: 5"
+      },
+      "ghost.mystery_skulls": {
+        "ranking": 4
       },
       "ascension.big_wild": {
         "ranking": 2
@@ -20838,7 +21023,13 @@
         "ranking": 4,
         "text": "rank from preferred: 5"
       },
+      "travelling_light.daydreamer": {
+        "ranking": 4
+      },
       "10_bad_bitches.river_moon+co": {
+        "ranking": 4
+      },
+      "primavera_azul.arthur+medic": {
         "ranking": 4
       },
       "ease.thijs_bos": {
@@ -21003,8 +21194,7 @@
         "text": "rank from preferred: 3"
       },
       "lay_it_down.dzz": {
-        "ranking": 4,
-        "text": "rank from preferred: 10"
+        "ranking": 3
       },
       "limeade.phritz": {
         "ranking": 4,
@@ -21099,6 +21289,9 @@
     "startTime": 20,
     "transitionNotes": {
       "her.nrmn": {
+        "ranking": 3
+      },
+      "all_we_need.autograf": {
         "ranking": 4
       },
       "best_thing.louis_vivet.2": {
@@ -21113,6 +21306,7 @@
     "endTime": 192,
     "key": 3,
     "notes": "perc.19,perc.18",
+    "tags": "delete",
     "startTime": 32,
     "transitionNotes": {
       "closer.lemaitre": {
@@ -21332,6 +21526,9 @@
         "ranking": 4,
         "text": "rank from preferred: 5"
       },
+      "u_da_1.hikeii": {
+        "ranking": 4
+      },
       "cloud_claps.mura_masa": {
         "ranking": 2
       },
@@ -21353,8 +21550,7 @@
         "text": "rank from preferred: 6"
       },
       "mesa.awe": {
-        "ranking": 4,
-        "text": "rank from preferred: 1"
+        "ranking": 4
       },
       "pretty_thoughts.fkj": {
         "ranking": 2
@@ -22197,6 +22393,9 @@
       "in_u.cash_bandicoot": {
         "ranking": 5
       },
+      "look_at_the_sky.phritz": {
+        "ranking": 3
+      },
       "prosperity.ninajirashi+laces": {
         "ranking": 2
       }
@@ -22425,6 +22624,9 @@
         "ranking": 4,
         "text": "maybe too similar?"
       },
+      "whistle.cake_pop": {
+        "ranking": 5
+      },
       "toothless.100_gecs": {
         "ranking": 5
       },
@@ -22466,6 +22668,10 @@
     "key": 6,
     "startTime": 0,
     "transitionNotes": {
+      "impulse.haywyre": {
+        "ranking": 4,
+        "text": "rank from preferred: 0"
+      },
       "cloud_claps.mura_masa": {
         "ranking": 2
       },
@@ -22474,10 +22680,6 @@
       },
       "i_jus_wanna.hikeii": {
         "ranking": 2
-      },
-      "impulse.haywyre": {
-        "ranking": 4,
-        "text": "rank from preferred: 0"
       },
       "here_with_me.the_living_proof": {
         "ranking": 3
@@ -22941,6 +23143,9 @@
       "1999.charli_xcx": {
         "ranking": 2
       },
+      "supernatural.hundaes": {
+        "ranking": 4
+      },
       "ease.thijs_bos": {
         "ranking": 4
       },
@@ -22999,6 +23204,9 @@
         "ranking": 4,
         "text": "dont include intro"
       },
+      "get_down.griz": {
+        "ranking": 5
+      },
       "muddy.nyop": {
         "ranking": 4
       },
@@ -23046,6 +23254,9 @@
         "ranking": 4,
         "text": "remove intro"
       },
+      "frog.ren_carter+liv_grace": {
+        "ranking": 4
+      },
       "boi_wit_luv.hikeii": {
         "ranking": 4
       },
@@ -23059,8 +23270,7 @@
         "ranking": 4
       },
       "everything_matters_when_it_comes_to_you.san_holo": {
-        "ranking": 4,
-        "text": "rank from preferred: 3"
+        "ranking": 3
       },
       "megalovania.tenkitsune": {
         "ranking": 3
@@ -23207,6 +23417,9 @@
     "transitionNotes": {
       "1999.charli_xcx": {
         "ranking": 2
+      },
+      "small_town.spazzkid": {
+        "ranking": 4
       },
       "ease.thijs_bos": {
         "ranking": 4
@@ -23549,6 +23762,9 @@
       "reiwa.tomggg": {
         "ranking": 3
       },
+      "perfect_workout.henrik_the_artist": {
+        "ranking": 2
+      },
       "the_one.electric_mantis": {
         "ranking": 2
       },
@@ -23567,7 +23783,7 @@
     "endTime": 160,
     "key": 9,
     "startTime": 64,
-    "tags": "starting-song",
+    "tags": "",
     "transitionNotes": {
       "blueming.iu": {
         "ranking": 4,
@@ -23996,6 +24212,9 @@
       "primavera_azul.arthur+medic": {
         "ranking": 4
       },
+      "cuff_it.beyonce": {
+        "ranking": 4
+      },
       "2h_du_matin.manila_killa": {
         "ranking": 4
       },
@@ -24159,6 +24378,9 @@
       "awake.hunt_for_the_breeze": {
         "ranking": 4,
         "text": "rank from preferred: 7"
+      },
+      "lose_control.nobel_yoo": {
+        "ranking": 3
       },
       "check_it.2point": {
         "ranking": 3
@@ -24653,6 +24875,10 @@
         "ranking": 4,
         "text": "rank from preferred: 3"
       },
+      "miss_you.akira_akira+hikeii": {
+        "ranking": 4,
+        "text": "rank from preferred: 4"
+      },
       "only.hikeii": {
         "ranking": 3
       },
@@ -24665,10 +24891,6 @@
       "magic_magic.yugiot": {
         "ranking": 4,
         "text": "rank from preferred: 0"
-      },
-      "miss_you.akira_akira+hikeii": {
-        "ranking": 4,
-        "text": "rank from preferred: 4"
       }
     },
     "name": "perfect_workout.henrik_the_artist",
@@ -24812,7 +25034,7 @@
         "text": "rank from preferred: 4"
       },
       "love_you_back.wyrscape": {
-        "ranking": 4
+        "ranking": 3
       },
       "ms_jackson.unknown": {
         "ranking": 2
@@ -25106,16 +25328,13 @@
   },
   "po_it_up.xzavier_stone": {
     "bpm": 118,
-    "endTime": 224,
+    "endTime": 228,
     "key": 4,
     "startTime": 32,
     "tags": "half time",
     "transitionNotes": {
-      "4wd.xzavier_stone": {
-        "ranking": 2
-      },
-      "body.moon_bounce": {
-        "ranking": 2
+      "rip.apashe": {
+        "ranking": 4
       },
       "coin.iu": {
         "ranking": 4,
@@ -25198,6 +25417,9 @@
       },
       "everything_matters_when_it_comes_to_you.san_holo": {
         "ranking": 2
+      },
+      "megalovania.tenkitsune": {
+        "ranking": 4
       },
       "small_town.spazzkid": {
         "ranking": 4
@@ -25348,6 +25570,9 @@
       },
       "2h_du_matin.manila_killa": {
         "ranking": 4
+      },
+      "pagoda.kyolo+krakn": {
+        "ranking": 5
       },
       "memory.haywyre": {
         "ranking": 5
@@ -25953,6 +26178,9 @@
       "islands.throwing_snow": {
         "ranking": 4
       },
+      "vendetta.beats_antique": {
+        "ranking": 3
+      },
       "mona_lisa.jkuch": {
         "ranking": 3
       },
@@ -26094,6 +26322,9 @@
       },
       "hot_in_it.charli_xcx": {
         "ranking": 2
+      },
+      "catch_me.apashe": {
+        "ranking": 4
       },
       "blank_spaces.sinjin_hawke": {
         "ranking": 4
@@ -26313,8 +26544,7 @@
         "ranking": 2
       },
       "midnight_anime.jkuch": {
-        "ranking": 4,
-        "text": "rank from preferred: 2"
+        "ranking": 4
       },
       "mirror_maru.cashmere_cat": {
         "ranking": 4,
@@ -26435,6 +26665,9 @@
         "ranking": 2
       },
       "miss_you.akira_akira+hikeii": {
+        "ranking": 2
+      },
+      "gotta_b.warpstr": {
         "ranking": 2
       },
       "we_will_meet_again.san_holo+jai+_wolf": {
@@ -26603,6 +26836,9 @@
       "aluko_river.chet_porter": {
         "ranking": 2
       },
+      "raayo.sanfear+draz": {
+        "ranking": 3
+      },
       "cloud_claps.mura_masa": {
         "ranking": 2
       },
@@ -26620,6 +26856,9 @@
       },
       "lacrimosa.apache": {
         "ranking": 2
+      },
+      "everytime_we_touch.henrik_the_artist": {
+        "ranking": 1
       },
       "love_ya.pure_100": {
         "ranking": 2
@@ -27050,11 +27289,10 @@
     "endTime": 256,
     "key": 5,
     "startTime": 64,
-    "tags": "starting-song,arty",
+    "tags": "starting-song,arty,full-time",
     "transitionNotes": {
       "10_bad_bitches.river_moon+co": {
-        "ranking": 4,
-        "text": "rank from preferred: 0"
+        "ranking": 4
       },
       "crybird.xavi": {
         "ranking": 2
@@ -27274,6 +27512,9 @@
     "key": 4,
     "startTime": 64,
     "transitionNotes": {
+      "invisible_children.mike_taylor": {
+        "ranking": 4
+      },
       "cant_find_the_words.x&g": {
         "ranking": 4
       },
@@ -29168,8 +29409,7 @@
         "ranking": 2
       },
       "the_anthem.griz": {
-        "ranking": 4,
-        "text": "rank from preferred: 3"
+        "ranking": 4
       }
     },
     "name": "sleepyhead.two_friends",
@@ -29190,6 +29430,9 @@
       },
       "poolside_all_star.safety": {
         "ranking": 4
+      },
+      "sorry.onlytom": {
+        "ranking": 5
       },
       "paradise.josh_pan+x&g": {
         "ranking": 2
@@ -29218,6 +29461,10 @@
     "startTime": 35,
     "tags": "hard,club",
     "transitionNotes": {
+      "awake.hunt_for_the_breeze": {
+        "ranking": 3,
+        "text": "remove overlap"
+      },
       "10_bad_bitches.river_moon+co": {
         "ranking": 4
       },
@@ -29367,6 +29614,9 @@
       "gotta_b.warpstr": {
         "ranking": 2
       },
+      "reiwa.tomggg": {
+        "ranking": 2
+      },
       "i_want_to_be_your_friend.dzz": {
         "ranking": 2
       },
@@ -29433,6 +29683,9 @@
     "startTime": 64,
     "tags": "upbeat",
     "transitionNotes": {
+      "poolside_all_star.safety": {
+        "ranking": 3
+      },
       "travelling_light.daydreamer": {
         "ranking": 2
       },
@@ -29478,7 +29731,7 @@
         "text": "harmonic overlap is lil weird"
       },
       "helix.kid_froopy": {
-        "ranking": 5
+        "ranking": 4
       },
       "memory.haywyre": {
         "ranking": 2
@@ -29648,6 +29901,10 @@
       },
       "sky_cathedral.hunt_for_the_breeze": {
         "ranking": 2
+      },
+      "something_comforting.lizdek": {
+        "ranking": 4,
+        "text": "rank from preferred: 1"
       },
       "something_comforting.porter_robinson": {
         "ranking": 4,
@@ -30003,8 +30260,7 @@
         "text": "rank from preferred: 3"
       }
     },
-    "name": "something_about_you.odesza",
-    "index": 332
+    "name": "something_about_you.odesza"
   },
   "something_comforting.lizdek": {
     "bpm": 145,
@@ -30170,8 +30426,7 @@
         "ranking": 5
       },
       "memories_that_you_call.petit_biscuit": {
-        "ranking": 4,
-        "text": "rank from preferred: 0"
+        "ranking": 5
       }
     },
     "name": "sorry.onlytom",
@@ -30712,6 +30967,9 @@
       "mirror_maru.melvv": {
         "ranking": 3
       },
+      "snapshot.middle_school": {
+        "ranking": 4
+      },
       "sorry.onlytom": {
         "ranking": 4
       },
@@ -30991,6 +31249,10 @@
         "ranking": 4,
         "text": "rank from preferred: 1"
       },
+      "the_coldest_click.curl_up": {
+        "ranking": 4,
+        "text": "shorten intro"
+      },
       "one_for_you.gill_chang": {
         "ranking": 2
       },
@@ -31209,6 +31471,9 @@
     "startTime": 32,
     "tags": "upbeat",
     "transitionNotes": {
+      "ease.thijs_bos": {
+        "ranking": 4
+      },
       "ohayo.w-fu": {
         "ranking": 4
       },
@@ -31534,6 +31799,10 @@
       "check_it.2point": {
         "ranking": 4,
         "text": "rank from preferred: 5"
+      },
+      "once_upon_a_time.tenkitsune": {
+        "ranking": 4,
+        "text": "fade overlap"
       },
       "les_go.hundaes": {
         "ranking": 5
@@ -31877,6 +32146,9 @@
       "cant_get_enough.basenji": {
         "ranking": 2
       },
+      "ive_gotta_know.big_gigantic": {
+        "ranking": 5
+      },
       "keep_on.vindata": {
         "ranking": 3,
         "text": "remove intro"
@@ -31962,7 +32234,7 @@
       },
       "i_want_to_be_your_friend.dzz": {
         "ranking": 4,
-        "text": "rank from preferred: 1"
+        "text": "vibe shift, shorten and fade intro"
       },
       "impression_of_you.electric_mantis": {
         "ranking": 2
@@ -31999,6 +32271,10 @@
     "startTime": 32,
     "tags": "syncopated,arty",
     "transitionNotes": {
+      "better_not.hikeii": {
+        "ranking": 3,
+        "text": "no overlap"
+      },
       "dont_lose_yourself_to_this.mikeq": {
         "ranking": 2
       },
@@ -32191,6 +32467,9 @@
       "awake.hunt_for_the_breeze": {
         "ranking": 5
       },
+      "i_jus_wanna.hikeii": {
+        "ranking": 2
+      },
       "crybird.xavi": {
         "ranking": 4,
         "text": "rank from preferred: 4"
@@ -32221,6 +32500,9 @@
       "give_me_sum.zavier_stone": {
         "ranking": 4,
         "text": "rank from preferred: 3"
+      },
+      "purple_hat.sofi_tukker": {
+        "ranking": 4
       },
       "koto.clozee": {
         "ranking": 4
@@ -32266,8 +32548,7 @@
         "text": "rank from preferred: 4"
       },
       "dreams.anamanaguchi+flux_pavilion": {
-        "ranking": 4,
-        "text": "rank from preferred: 1"
+        "ranking": 5
       },
       "gotta_b.warpstr": {
         "ranking": 4,
@@ -32986,6 +33267,9 @@
         "ranking": 2,
         "text": "outro too long"
       },
+      "aseryo.naisu": {
+        "ranking": 4
+      },
       "change_my_mind.phritz": {
         "ranking": 4
       },
@@ -33319,8 +33603,7 @@
         "text": "harmonic weirdness"
       },
       "gotta_b.warpstr": {
-        "ranking": 4,
-        "text": "rank from preferred: 0"
+        "ranking": 4
       },
       "hell.vincent": {
         "ranking": 2
@@ -33352,8 +33635,7 @@
         "ranking": 2
       },
       "whoopty.sjayy+gutta": {
-        "ranking": 4,
-        "text": "rank from preferred: 2"
+        "ranking": 3
       },
       "work_4_me.towkio": {
         "ranking": 2
@@ -33635,9 +33917,11 @@
       "natural.academy_garden": {
         "ranking": 3
       },
+      "velours.anomalie": {
+        "ranking": 1
+      },
       "shadow_dances.opia": {
-        "ranking": 4,
-        "text": "rank from preferred: 0"
+        "ranking": 1
       },
       "wut.le1f": {
         "ranking": 4,
@@ -33652,7 +33936,14 @@
     "endTime": 176,
     "key": 3,
     "startTime": 64,
+    "notes": "TODO: should maybe remove intro bit",
     "transitionNotes": {
+      "hell.vincent": {
+        "ranking": 4
+      },
+      "saeed.infected_mushroom": {
+        "ranking": 4
+      },
       "resonate.the_prodigy": {
         "ranking": 2
       },
@@ -34660,7 +34951,7 @@
     "transitionNotes": {
       "all_night.phritz+hirihiri+amane_uyama+kabanagu": {
         "ranking": 4,
-        "text": "rank from preferred: 4"
+        "text": "weird transition"
       },
       "clear.shawn_wasabi": {
         "ranking": 4
@@ -34708,6 +34999,9 @@
       "好き_Suki.night_tempo+tomggg": {
         "ranking": 4,
         "text": "fade in"
+      },
+      "memory.haywyre": {
+        "ranking": 4
       },
       "lilac.iu": {
         "ranking": 4
@@ -35079,6 +35373,9 @@
       "kavachi.manitee": {
         "ranking": 2
       },
+      "only.hikeii": {
+        "ranking": 2
+      },
       "limeade.phritz": {
         "ranking": 2
       },
@@ -35252,6 +35549,9 @@
       "crybird.xavi": {
         "ranking": 4,
         "text": "rank from preferred: 1"
+      },
+      "i_jus_wanna.hikeii": {
+        "ranking": 3
       },
       "here_with_me.the_living_proof": {
         "ranking": 4
@@ -35831,6 +36131,9 @@
         "ranking": 4,
         "text": "rank from preferred: 6"
       },
+      "vendetta.beats_antique": {
+        "ranking": 2
+      },
       "playing_god.polyphia": {
         "ranking": 2
       },
@@ -36098,6 +36401,9 @@
       "battle_royale_vip.apashe": {
         "ranking": 2
       },
+      "in_my_head.who_came_after": {
+        "ranking": 5
+      },
       "ive_gotta_know.trails": {
         "ranking": 2
       },
@@ -36114,9 +36420,6 @@
       },
       "hotto_doggu.shawn_wasabi": {
         "ranking": 2
-      },
-      "in_my_head.who_came_after": {
-        "ranking": 5
       },
       "ive_gotta_know.big_gigantic": {
         "ranking": 4,
@@ -36161,6 +36464,9 @@
       "ghost.mystery_skulls": {
         "ranking": 4,
         "text": "rank from preferred: 5"
+      },
+      "coin.iu": {
+        "ranking": 4
       },
       "cuff_it.beyonce": {
         "ranking": 4
@@ -36246,6 +36552,10 @@
         "ranking": 4,
         "text": "rank from preferred: 3"
       },
+      "i_still_see_your_face.cortr+swrly": {
+        "ranking": 4,
+        "text": "maybe remove overlap"
+      },
       "endless_fantasy.anamanaguchi": {
         "ranking": 4
       },
@@ -36267,6 +36577,9 @@
       },
       "everything_matters_when_it_comes_to_you.san_holo": {
         "ranking": 2
+      },
+      "frog.ren_carter+liv_grace": {
+        "ranking": 3
       },
       "gunshotta.famous_eno": {
         "ranking": 2
@@ -36617,7 +36930,11 @@
     "key": 4,
     "endTime": 384,
     "startTime": 16,
+    "notes": "unsyncopated",
     "transitionNotes": {
+      "dont_stop.2point": {
+        "ranking": 5
+      },
       "dont_lose_yourself_to_this.mikeq": {
         "ranking": 5
       },
@@ -36757,6 +37074,10 @@
         "ranking": 4,
         "text": "fade"
       },
+      "let_me_know.stupead": {
+        "ranking": 3,
+        "text": "remove overlap"
+      },
       "back_to_the_club.cool_tweens": {
         "ranking": 4
       },
@@ -36847,6 +37168,9 @@
       },
       "bpm.twin_diplomacy": {
         "ranking": 5
+      },
+      "smashmouth.ninajirachi": {
+        "ranking": 4
       },
       "10_bad_bitches.river_moon+co": {
         "ranking": 4
@@ -36951,6 +37275,9 @@
     "startTime": 8,
     "tags": "starting-song",
     "transitionNotes": {
+      "i.kendrick_lamar": {
+        "ranking": 4
+      },
       "ascension.big_wild": {
         "ranking": 5
       },
@@ -37036,7 +37363,11 @@
     "key": 2,
     "endTime": 416,
     "startTime": 0,
+    "tags": "upbeat,unsycopated",
     "transitionNotes": {
+      "just_a_thought.benzel": {
+        "ranking": 2
+      },
       "reiwa.tomggg": {
         "ranking": 4
       }
@@ -37117,6 +37448,9 @@
     "tags": "starting-song,hard,club",
     "transitionNotes": {
       "primavera_azul.arthur+medic": {
+        "ranking": 4
+      },
+      "check_it.2point": {
         "ranking": 4
       },
       "10_bad_bitches.river_moon+co": {
@@ -37303,6 +37637,9 @@
     "transitionNotes": {
       "von_dutch.charli_xcx": {
         "ranking": 4
+      },
+      "dont_lose_yourself_to_this.mikeq": {
+        "ranking": 5
       }
     },
     "name": "lose_control.nobel_yoo",
@@ -37368,7 +37705,11 @@
     "key": 5,
     "endTime": 352,
     "startTime": 0,
-    "transitionNotes": {},
+    "transitionNotes": {
+      "ohayo.w-fu": {
+        "ranking": 4
+      }
+    },
     "name": "whistle.nobel_yoo",
     "index": 829
   },

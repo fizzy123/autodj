@@ -155,7 +155,7 @@ const get = (
   bpm,
   lastLoadedSongName,
   keyRange = 2,
-  bpmRange = 5
+  bpmRange = 10
 ) => {
   if (key === undefined) {
     key = env.key
@@ -229,8 +229,9 @@ const getStartingSongs = () => {
   }
 }
 
+var LOOP_COUNT = 8
 const getLoops = () => {
-  if (!env.key) {
+  if (env.key == undefined) {
     throw new Error("no key found. you must load a song first")
   }
   let key = env.key
@@ -254,13 +255,7 @@ const getLoops = () => {
     }
   }
   loops = util.shuffle(loops)
-  env.recentlyShownLoops = []
   return loops
-  for (let i=0;i<10;i++) {
-    let loop = loops[i]
-    console.log(`${i}) ${chalk.white(loop.name)} [${chalk.blue(loop.key)}][${chalk.cyan(loop.bpm)}]`)
-    env.recentlyShownLoops.push(loop)
-  }
 }
 
 const loadWrapper = (...args) => {
@@ -317,6 +312,13 @@ const load = async (nextSongName, keyChange = false) => {
   env.songCursor = songPosition + nextSong.endTime
   env.history.push(nextSong.name)
   env.recentlyShownSongs = []
+
+  // load audio loops
+  var loops = getLoops()
+
+  for (let i=0;i<LOOP_COUNT;i++) {
+    loadAudioLoop(songPosition, loops[i].name ,"loop.audio." + (i + 1).toString())
+  }
 
   let logString = `Loaded ${chalk.white(nextSong.name)} [${chalk.blue(nextSong.key)}][${chalk.cyan(nextSong.bpm)}]`
   if (nextSong.notes) {
@@ -407,19 +409,12 @@ const loadDrums = (time, drumTrackName) => {
 } 
 
 const loadAudioLoop = (time, loopName, destinationTrackId) => {
-  if (typeof loopName === "number") {
-    loopName = env.recentlyShownLoops[loopName]?.name
-    if (!loopName) {
-      throw new Error("loading from recently shown loops failed")
-    }
-    console.log(`loading ${loopName} from recently shown loops`)
-  }
   let loop = loopDict[loopName]
   let trackName = "loops"
   if (loop.key === -1) {
     trackName = "loops.perc"
   }
-  loadClip(trackName, loopName, time, "loop.audio." + destinationTrackId)
+  loadClip(trackName, loopName, time, destinationTrackId)
 }
 
 const saveState = () => {

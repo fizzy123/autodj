@@ -1041,7 +1041,7 @@ function buildNextSongQuery(currentSong, matchKey, loopBpm) {
       targetBpm = targetBpm * 2
     }
   }
-  var bpmRequirements = "bpm BETWEEN " + (parseInt(targetBpm) - 5).toString() + " AND " + (parseInt(targetBpm) + 5).toString()
+  var bpmRequirements = "bpm BETWEEN " + (parseInt(targetBpm) - 10).toString() + " AND " + (parseInt(targetBpm) + 10).toString()
   var startSection = "section = 'start'"
   
   let startTime = state[currentChannel].end - state[currentChannel].currentPosition - 1

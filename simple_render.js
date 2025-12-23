@@ -4,14 +4,10 @@ const db = require('better-sqlite3')('C:/Users/fizzz/Dropbox/User Library/Preset
 const ableton = new Ableton({ logger: console });
 
 trackClipDict = {
-//  "Mixing": [61,68],
-//  "kick": [79,90],
-//  "stutter.perc": [82,98],
-//  "snare": [61,61],
-//  "perc": [83,98],
-//  "perc.2": [83,98],
-  "hh": [68,73],
-  "hh.2": [68,73],
+  "mixing": [1,3],
+  "kick": [1,11],
+  "perc": [1,20],
+  "hh": [1,6],
 }
 
 length = 4 * 1000
@@ -32,7 +28,7 @@ const render = async () => {
 
           const clip = await clipSlot.get("clip");
           const clipLength = await clip.get("length");
-          nextCurrentTime = currentTime + 4 * 4
+          nextCurrentTime = currentTime + 4 * 16
           while (currentTime < nextCurrentTime) {
               await track.duplicateClipToArrangement(clip.raw.id, currentTime)
               currentTime = currentTime + clipLength
